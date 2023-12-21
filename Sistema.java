@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -87,5 +88,30 @@ public class Sistema {
         } while (true);
     }
     // continuar a partir daqui as funcoes
+    public List<Medicamento> consultarMedicamentos(){
+        return null;
+    }
+    public List<InteracaoAlimentar> consultarInteracaoAlimentar(){
+        return null;
+    }
+    public List<SubstanciaAtiva> consultarSubstancias(){
+        return null;
+    }
+    public List<InteracaoAlimentar> pesquisarInteracaoAlimentar(){
+        return null;
+    }
+    public List<Medicamento> pesquiasrMedicamento(){
+        return null;
+    }
+    public List<SubstanciaAtiva> pesquisarSubstancia(){
+        return null;
+    }
+    public String pesquisarContato(){
+        return null;
+    }
+    public String consultaDetalhesInteracao(){
+        return null;
+    }
+
 
 }

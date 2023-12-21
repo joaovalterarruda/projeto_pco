@@ -1,19 +1,16 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class HandlerUtilizador <Lista extends UtilizadorRegistado>{
-    private List <Lista> utilizador; //  n faz mt sentido acho
+    private final List <UtilizadorRegistado> utilizadores = new ArrayList<>();
 
-    public void inserirNomeUtilizador(List<Lista> utilizador){
-
-    }
-    public void inserirPassword(List<Lista> utilizador){
+    public void criarUtilizador(UtilizadorRegistado utilizadorRegistado){
 
     }
-    public void inserirEmail(List<Lista> utilizador){
+    public void removeUtilizador(){
 
     }
-    public void inserirPapel(List<Lista> utilizador){
-
+    public List <UtilizadorRegistado> getUtilizador(){
+        return null;
     }
-
 }
