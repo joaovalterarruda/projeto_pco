@@ -10,8 +10,18 @@ import java.util.List;
 import java.util.Scanner;
 
 
+/**
+ * The type Sistema.
+ */
 public class Sistema {
+    /**
+     * The Filename.
+     */
     static final String FILENAME = "dataset.json";
+
+    /**
+     * Menu opcoes.
+     */
     public static void menuOpcoes() {
         System.out.println(" Bem Vindo ao programa de Gestão de Farmacoviligância");
         System.out.println("******************************** ");
@@ -31,6 +41,10 @@ public class Sistema {
         System.out.println("********************************");
         System.out.print("Introduza uma opção: ");
     }
+
+    /**
+     * Escolha opcoes.
+     */
     public static void escolhaOpcoes() {
         /// estas duas aqui funcao startup
         HandlerUtilizador<UtilizadorRegistado> listaUtilizadores = new HandlerUtilizador<>();
@@ -87,28 +101,76 @@ public class Sistema {
             }
         } while (true);
     }
-    // continuar a partir daqui as funcoes
+
+    /**
+     * Consultar medicamentos list.
+     *
+     * @return the list
+     */
+// continuar a partir daqui as funcoes
     public List<Medicamento> consultarMedicamentos(){
         return null;
     }
+
+    /**
+     * Consultar interacao alimentar list.
+     *
+     * @return the list
+     */
     public List<InteracaoAlimentar> consultarInteracaoAlimentar(){
         return null;
     }
+
+    /**
+     * Consultar substancias list.
+     *
+     * @return the list
+     */
     public List<SubstanciaAtiva> consultarSubstancias(){
         return null;
     }
+
+    /**
+     * Pesquisar interacao alimentar list.
+     *
+     * @return the list
+     */
     public List<InteracaoAlimentar> pesquisarInteracaoAlimentar(){
         return null;
     }
+
+    /**
+     * Pesquiasr medicamento list.
+     *
+     * @return the list
+     */
     public List<Medicamento> pesquiasrMedicamento(){
         return null;
     }
+
+    /**
+     * Pesquisar substancia list.
+     *
+     * @return the list
+     */
     public List<SubstanciaAtiva> pesquisarSubstancia(){
         return null;
     }
+
+    /**
+     * Pesquisar contato string.
+     *
+     * @return the string
+     */
     public String pesquisarContato(){
         return null;
     }
+
+    /**
+     * Consulta detalhes interacao string.
+     *
+     * @return the string
+     */
     public String consultaDetalhesInteracao(){
         return null;
     }
