@@ -1,8 +1,8 @@
 public class Farmacovigilancia {
-    private final String nome;
-    private String contato;
+    private String nome;
+    private long contato;
 
-    public Farmacovigilancia(String nome, String contato) {
+    public Farmacovigilancia(String nome, long contato) {
         this.nome = nome;
         this.contato = contato;
     }
@@ -11,10 +11,14 @@ public class Farmacovigilancia {
         return nome;
     }
 
-    public String getContato() {
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public long getContato() {
         return contato;
     }
-    public void setContato(String contato) {
+    public void setContato(long contato) {
         this.contato = contato;
     }
 
