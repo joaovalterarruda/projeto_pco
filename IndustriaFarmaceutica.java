@@ -1,30 +1,39 @@
-public interface IndustriaFarmaceutica {
-    String nome = "";
+public class IndustriaFarmaceutica extends UtilizadorRegistado {
+    private String nome;
 
-    public default String getNome() {
+    public IndustriaFarmaceutica(String nome, String password, String email, String role) {
+        super(nome, password, email,role);
+        this.nome = nome;
+    }
+
+    public String getNome() {
         return nome;
     }
 
-    public default void setNome(String nome) {
-
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public default void criarMedicamento(){
+    public void criarMedicamento(){
 
     }
-    public default void indicarNomeMedicamento(){
+    public void indicarNomeMedicamento(){
 
     }
-    public default void confirmarCriacao(){
+    public void confirmarCriacao(){
 
     }
-    public default void cancelarCriacao(){
+    public void cancelarCriacao(){
 
     }
-    public default void consultarMedicamento(){
+    public void consultarMedicamento(){
 
     }
 
     @Override
-    public String toString();
+    public String toString() {
+        return "IndustriaFarmaceutica{" +
+                "nome='" + nome + '\'' +
+                '}';
+    }
 }

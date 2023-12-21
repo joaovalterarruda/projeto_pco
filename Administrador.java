@@ -1,4 +1,8 @@
-public class Administrador {
+public class Administrador extends UtilizadorRegistado{
+    public Administrador(String nome, String password, String email, String role) {
+        super(nome, password, email, role);
+    }
+
     public void inserirNomeUtilizador(){
 
     }

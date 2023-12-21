@@ -1,29 +1,33 @@
-public interface Farmaceutico {
-    public default void criarInteracao(){
+public class Farmaceutico extends UtilizadorRegistado {
+    public Farmaceutico(String nome, String password, String email, String role) {
+        super(nome, password, email, role);
+    }
+
+    public void criarInteracao(){
 
     }
-    public default void indicarNomeSubstancia(){
+    public void indicarNomeSubstancia(){
 
     }
-    public default void indicarExplicacao(){
+    public void indicarExplicacao(){
 
     }
-    public default void indicarAlimento(){
+    public void indicarAlimento(){
 
     }
-    public default void indicarEfeito(){
+    public void indicarEfeito(){
 
     }
-    public default void indicarBibliografia(){
+    public void indicarBibliografia(){
 
     }
-    public default void confirmarCriacao(){
+    public void confirmarCriacao(){
 
     }
-    public default void cancelarCraiacao(){
+    public void cancelarCraiacao(){
 
     }
-    public default void consultarInteracao(){
+    public void consultarInteracao(){
 
     }
 }
