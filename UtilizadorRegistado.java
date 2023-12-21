@@ -1,8 +1,8 @@
 public class UtilizadorRegistado extends Administrador implements IndustriaFarmaceutica, Farmaceutico{
     private String nome;
-    private final String password;
-    private final String email;
-    private final String role;
+    private String password;
+    private String email;
+    private String role;
 
     public UtilizadorRegistado(String nome, String password, String email, String role) {
         this.nome = nome;
@@ -14,11 +14,30 @@ public class UtilizadorRegistado extends Administrador implements IndustriaFarma
     public String getNome() {
         return nome;
     }
+    public String getPassword() {
+        return password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getRole() {
+        return role;
+    }
 
     public void setNome(String nome) {
         this.nome = nome;
     }
-
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    public void setRole(String role){
+        this.role = role;
+    }
     @Override
     public void criarMedicamento() {
         IndustriaFarmaceutica.super.criarMedicamento();
@@ -44,17 +63,6 @@ public class UtilizadorRegistado extends Administrador implements IndustriaFarma
         IndustriaFarmaceutica.super.consultarMedicamento();
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getRole() {
-        return role;
-    }
 
     @Override
     public String toString() {
