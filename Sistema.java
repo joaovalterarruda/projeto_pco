@@ -1,14 +1,11 @@
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 
-
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 
@@ -44,10 +41,11 @@ public class Sistema {
             opcao = scanner.nextInt();
             switch (opcao) {
                 case 1:
-                    adicionarUtilizador(scanner, listaUtilizadores);
+//                    adicionarUtilizador(scanner, listaUtilizadores);
+                    System.out.println("dois");
                     break;
                 case 2:
-                    listarMedicamentos();
+                    System.out.println("dois");
                     break;
                 case 3:
                     System.out.println("dois");
@@ -89,35 +87,5 @@ public class Sistema {
         } while (true);
     }
     // continuar a partir daqui as funcoes
-    public static void adicionarUtilizador(Scanner scanner, HandlerUtilizador<UtilizadorRegistado> listaUtilizador){
-        System.out.println("Introduza o nome de utilizador: ");
-        String nome = scanner.nextLine();
-        System.out.println("Introduza uma password: ");
-        String password = scanner.nextLine();
-        System.out.println("Introduza o seu email: ");
-        String email = scanner.nextLine();
-        System.out.println("Introduza o tipo de utilizador: \n1) Administrador\n2) Indústria\n3) Farmacêutico"); // será o role, mas para ficar coerente com o que se tem
-//        int role = scanner.nextInt();
-//        switch (role){
-//            case 1:
-//                System.out.println("Administrador");
-//                break;
-//            case 2:
-//                System.out.println("Indústria");
-//                break;
-//            case 3:
-//                System.out.println("Farmacêutico");
-//                break;
-//        }
-
-    }
-    public static void removerUtilizador(){
-        // falta completar
-    }
-
-    public static void listarMedicamentos() {
-
-    }
-
 
 }

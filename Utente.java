@@ -8,7 +8,7 @@ public class Utente extends UtilizadorRegistado{
     public void pesquisarContato(){
 
     }
-    public List consultarDetalhesInteracao(){
+    public List <InteracaoAlimentar> consultarDetalhesInteracao(){ // confirmar se é assim
 
         return null;
     }

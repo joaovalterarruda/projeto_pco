@@ -1,5 +1,3 @@
-import java.util.List;
-
 public class IndustriaFarmaceutica extends UtilizadorRegistado {
     private String nome;
 
@@ -14,33 +12,6 @@ public class IndustriaFarmaceutica extends UtilizadorRegistado {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public Medicamento criarMedicamento(){
-
-        return null;
-    }
-    public void indicarNomeMedicamento(){
-
-    }
-    public void indicarDosagem(){
-
-    }
-    public void indicarNomeSubstancia(){
-
-    }
-
-    public boolean confirmarCriacao(){
-
-        return false;
-    }
-    public boolean cancelarCriacao(){
-
-        return false;
-    }
-    public <List> Medicamento consultarMedicamento(){
-
-        return null;
     }
 
     @Override
