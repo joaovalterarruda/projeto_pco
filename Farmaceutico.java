@@ -21,13 +21,15 @@ public class Farmaceutico extends UtilizadorRegistado {
     public void indicarBibliografia(){
 
     }
-    public void confirmarCriacao(){
-
+    public boolean confirmarCriacao(){
+        return false;
     }
-    public void cancelarCraiacao(){
+    public boolean cancelarCraiacao(){
 
+        return false;
     }
-    public void consultarInteracao(){
+    public <List> InteracaoAlimentar consultarInteracao(){
 
+        return null;
     }
 }

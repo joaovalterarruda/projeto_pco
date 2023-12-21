@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Utente extends UtilizadorRegistado{
     public Utente(String nome, String password, String email, String role) {
         super(nome, password, email, role);
@@ -6,10 +8,12 @@ public class Utente extends UtilizadorRegistado{
     public void pesquisarContato(){
 
     }
-    public void consultarDetalhesInteracao(){
+    public List consultarDetalhesInteracao(){
 
+        return null;
     }
-    public void cancelarPesquisa(){
+    public boolean cancelarPesquisa(){
 
+        return false;
     }
 }

@@ -1,9 +1,9 @@
 public class Medicamento {
     public String nome;
     public String formula;
-    public String dosagem;
+    public int dosagem;
 
-    public Medicamento(String nome, String formula, String dosagem) {
+    public Medicamento(String nome, String formula, int dosagem) {
         this.nome = nome;
         this.formula = formula;
         this.dosagem = dosagem;
@@ -25,11 +25,11 @@ public class Medicamento {
         this.formula = formula;
     }
 
-    public String getDosagem() {
+    public int getDosagem() {
         return dosagem;
     }
 
-    public void setDosagem(String dosagem) {
+    public void setDosagem(int dosagem) {
         this.dosagem = dosagem;
     }
 

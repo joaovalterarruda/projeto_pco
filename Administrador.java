@@ -6,25 +6,33 @@ public class Administrador extends UtilizadorRegistado{
     public void inserirNomeUtilizador(){
 
     }
-    public void inserirPassoword(){
+    public void inserirPassword(){
+
+    }
+    public void inserirEmail(){
 
     }
     public void inserirPapel(){
 
     }
-    public void indicarConta(){
+    public int indicarContato(){
 
+        return 0;
     }
-    public void criarSubstancia(){
+    public SubstanciaAtiva criarSubstancia(){
 
+        return null;
     }
-    public void indicarNomeSubstancia(){
+    public String indicarNomeSubstancia(){
 
+        return null;
     }
-    public void confirmarSubstancia(){
+    public boolean confirmarSubstancia(){
 
+        return false;
     }
-    public void recuperarSubstancia(){
+    public boolean recuperarSubstancia(){
 
+        return false;
     }
 }
