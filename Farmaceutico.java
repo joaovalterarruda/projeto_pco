@@ -1,29 +1,29 @@
-public class Farmaceutico {
-    public void criarInteracao(){
+public interface Farmaceutico {
+    public default void criarInteracao(){
 
     }
-    public void indicarNomeSubstancia(){
+    public default void indicarNomeSubstancia(){
 
     }
-    public void indicarExplicacao(){
+    public default void indicarExplicacao(){
 
     }
-    public void indicarAlimento(){
+    public default void indicarAlimento(){
 
     }
-    public void indicarEfeito(){
+    public default void indicarEfeito(){
 
     }
-    public void indicarBibliografia(){
+    public default void indicarBibliografia(){
 
     }
-    public void confirmarCriacao(){
+    public default void confirmarCriacao(){
 
     }
-    public void cancelarCraiacao(){
+    public default void cancelarCraiacao(){
 
     }
-    public void consultarInteracao(){
+    public default void consultarInteracao(){
 
     }
 }
