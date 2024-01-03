@@ -4,7 +4,7 @@ import java.util.List;
 /**
  * The type Creation handler subs ativa.
  */
-public class CreationHandlerSubsAtiva {
+public class HandlerSubsAtiva {
 
     private final List<SubstanciaAtiva> substanciaAtivas = new ArrayList<>();
 
