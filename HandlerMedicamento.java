@@ -18,7 +18,7 @@ public class HandlerMedicamento {
         String nome = scanner.nextLine();
 
         System.out.println("Digite a dosagem do medicamento: ");
-        int dosagem = scanner.nextInt();
+        String dosagem = scanner.nextLine();
 
         System.out.println("Digite a forma do medicamento (comprimido, líquido, etc) ");
         String forma = scanner.nextLine();

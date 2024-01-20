@@ -1,24 +1,72 @@
-
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import java.io.FileNotFoundException;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import java.io.FileReader;
-
+import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
 
 /**
  * The type Sistema.
  */
 public class Sistema {
-    /**
-     * The Filename.
-     */
-    static final String FILENAME = "dataset.json";
+    static String filename = "dataset.json";
+    static List<Medicamento> drugs;
+    static List<SubstanciaAtiva> substanciasAtivas;
+    static List<InteracaoAlimentar> interacaoAlimentares;
 
+    public Sistema(List<Medicamento> drugs, List<SubstanciaAtiva> substanciaAtivas, List<InteracaoAlimentar> interacaoAlimentars) {
+        Sistema.drugs = new ArrayList<>(drugs);
+        Sistema.substanciasAtivas = new ArrayList<>(substanciaAtivas);
+        Sistema.interacaoAlimentares = new ArrayList<>(interacaoAlimentars);
+    }
+
+    public static void carregarDados(String filename) {
+        Gson gson = new Gson();
+
+        try (Reader reader = new FileReader(filename)) {
+            JsonObject jsonObject = JsonParser.parseReader(reader).getAsJsonObject();
+            // Inicializar as listas
+            drugs = new ArrayList<>();
+            substanciasAtivas = new ArrayList<>();
+            interacaoAlimentares = new ArrayList<>();
+
+            // Carregar lista de medicamentos
+            JsonArray medicamentosArray = jsonObject.getAsJsonArray("drugs");
+            if (medicamentosArray != null) {
+                for (int i = 0; i < medicamentosArray.size(); i++) {
+                    JsonObject medObject = medicamentosArray.get(i).getAsJsonObject();
+                    Medicamento medicamento = gson.fromJson(medObject, Medicamento.class);
+                    drugs.add(medicamento);
+                }
+            }
+
+            // Carregar lista de substâncias ativas
+            JsonArray substanciasArray = jsonObject.getAsJsonArray("substanciaAtivas");
+            if (substanciasArray != null) {
+                for (int i = 0; i < substanciasArray.size(); i++) {
+                    JsonObject substanciaObject = substanciasArray.get(i).getAsJsonObject();
+                    SubstanciaAtiva substanciaAtiva = gson.fromJson(substanciaObject, SubstanciaAtiva.class);
+                    substanciasAtivas.add(substanciaAtiva);
+                }
+            }
+
+            // Carregar lista de interações alimentares
+            JsonArray interacoesArray = jsonObject.getAsJsonArray("interacaoAlimentars");
+            if (interacoesArray != null) {
+                for (int i = 0; i < interacoesArray.size(); i++) {
+                    JsonObject interacaoObject = interacoesArray.get(i).getAsJsonObject();
+                    InteracaoAlimentar interacaoAlimentar = gson.fromJson(interacaoObject, InteracaoAlimentar.class);
+                    interacaoAlimentares.add(interacaoAlimentar);
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     /**
      * Menu opcoes.
      */
@@ -56,17 +104,17 @@ public class Sistema {
             opcao = scanner.nextInt();
             switch (opcao) {
                 case 1:
-//                    adicionarUtilizador(scanner, listaUtilizadores);
-                    System.out.println("dois");
+                    System.out.println("Carregando Medicamentos..");
+                    carregarDados(filename);
                     break;
                 case 2:
-                    System.out.println("dois");
+                    consultarMedicamentos();
                     break;
                 case 3:
-                    System.out.println("dois");
+                    consultarInteracoesAlimentares();
                     break;
                 case 4:
-                    System.out.println("dois");
+                    consultarSubstanciasAtivas();
                     break;
                 case 5:
                     System.out.println("dois");
@@ -108,9 +156,9 @@ public class Sistema {
      * @return the list
      */
 // continuar a partir daqui as funcoes
-    public List<Medicamento> consultarMedicamentos(){
-        return null;
-    }
+//    public List<Medicamento> consultarMedicamentos(){
+//        return null;
+//    }
 
     /**
      * Consultar interacao alimentar list.
@@ -173,6 +221,42 @@ public class Sistema {
      */
     public String consultaDetalhesInteracao(){
         return null;
+    }
+
+    public static void consultarMedicamentos() {
+        if (drugs != null && !drugs.isEmpty()) {
+            for (Medicamento medicamento : drugs) {
+                System.out.println(medicamento);
+            }
+        } else {
+            System.out.println("Nenhum medicamento carregado.");
+        }
+    }
+
+    /**
+     * Consultar todas as substâncias ativas carregadas.
+     */
+    public static void consultarSubstanciasAtivas() {
+        if (substanciasAtivas != null && !substanciasAtivas.isEmpty()) {
+            for (SubstanciaAtiva substanciaAtiva : substanciasAtivas) {
+                System.out.println(substanciaAtiva);
+            }
+        } else {
+            System.out.println("Nenhuma substância ativa carregada.");
+        }
+    }
+
+    /**
+     * Consultar todas as interações alimentares carregadas.
+     */
+    public static void consultarInteracoesAlimentares() {
+        if (interacaoAlimentares != null && !interacaoAlimentares.isEmpty()) {
+            for (InteracaoAlimentar interacaoAlimentar : interacaoAlimentares) {
+                System.out.println(interacaoAlimentar);
+            }
+        } else {
+            System.out.println("Nenhuma interação alimentar carregada.");
+        }
     }
 
 

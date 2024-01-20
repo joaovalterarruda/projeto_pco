@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="dashbuilder.json" type="repository">
+    <properties maven-id="org.dashbuilder:dashbuilder-json:0.4.0.Final" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/dashbuilder/dashbuilder-json/0.4.0.Final/dashbuilder-json-0.4.0.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

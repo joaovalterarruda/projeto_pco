@@ -10,5 +10,8 @@
     <orderEntry type="library" name="google.code.gson" level="project" />
     <orderEntry type="library" name="fasterxml.jackson.core.annotations" level="project" />
     <orderEntry type="library" name="fasterxml.jackson.core.databind" level="project" />
+    <orderEntry type="library" name="dashbuilder.json" level="project" />
+    <orderEntry type="library" name="github.java.json.tools.patch" level="project" />
+    <orderEntry type="library" name="json" level="project" />
   </component>
 </module>
