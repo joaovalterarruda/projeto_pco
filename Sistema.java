@@ -1,18 +1,11 @@
 import com.google.gson.*;
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- * The type Sistema.
- */
 public class Sistema {
     static String filename = "dataset.json";
     static List<Medicamento> drugs;
@@ -25,9 +18,6 @@ public class Sistema {
         Sistema.interacaoAlimentares = new ArrayList<>(interacaoAlimentars);
     }
 
-    /**
-     * Menu opcoes.
-     */
     public static void menuOpcoes() {
         System.out.println(" Bem Vindo ao programa de Gestão de Farmacoviligância");
         System.out.println("******************************** ");
@@ -41,17 +31,15 @@ public class Sistema {
 
         System.out.println("7 ) Consultar Medicamentos ---DONE");
         System.out.println("8 ) Consultar Utilizadores");
-        System.out.println("9 ) Consultar Substâncias Ativas");
+        System.out.println("9 ) Consultar Substâncias Ativas ---DONE");
         System.out.println("10 ) Consultar Interações Alimentares");
+
         System.out.println("11 ) Pesquisar Contato da Farmacovigilância");
         System.out.println("0 ) Sair");
         System.out.println("********************************");
         System.out.print("Introduza uma opção: ");
     }
 
-    /**
-     * Escolha opcoes.
-     */
     public static void escolhaOpcoes() {
         /// estas duas aqui funcao startup
         HandlerUtilizador<UtilizadorRegistado> listaUtilizadores = new HandlerUtilizador<>();
@@ -69,10 +57,10 @@ public class Sistema {
                     consultarMedicamentos(filename);
                     break;
                 case 3:
-                    consultarInteracoesAlimentares();
+                    consultarInteracoesAlimentares(filename);
                     break;
                 case 4:
-                    consultarSubstanciasAtivas();
+                    consultarSubstancias(filename);
                     break;
                 case 5:
                     System.out.println("dois");
@@ -87,7 +75,7 @@ public class Sistema {
                     System.out.println("dois");
                     break;
                 case 9:
-                    consultarSubstancias(filename);
+//                    consultarSubstancias(filename);
                     break;
                 case 10:
                     System.out.println("dois");
@@ -101,76 +89,33 @@ public class Sistema {
             }
         } while (true);
     }
+// continuar a partir daqui!
 
-    /**
-     * Consultar medicamentos list.
-     *
-     * @return the list
-     */
-// continuar a partir daqui as funcoes
-//    public List<Medicamento> consultarMedicamentos(){
-//        return null;
-//    }
 
-    /**
-     * Consultar interacao alimentar list.
-     *
-     * @return the list
-     */
     public List<InteracaoAlimentar> consultarInteracaoAlimentar(){
         return null;
     }
 
-    /**
-     * Consultar substancias list.
-     *
-     * @return the list
-     */
     public List<SubstanciaAtiva> consultarSubstancias(){
         return null;
     }
 
-    /**
-     * Pesquisar interacao alimentar list.
-     *
-     * @return the list
-     */
     public List<InteracaoAlimentar> pesquisarInteracaoAlimentar(){
         return null;
     }
 
-    /**
-     * Pesquiasr medicamento list.
-     *
-     * @return the list
-     */
     public List<Medicamento> pesquiasrMedicamento(){
         return null;
     }
 
-    /**
-     * Pesquisar substancia list.
-     *
-     * @return the list
-     */
     public List<SubstanciaAtiva> pesquisarSubstancia(){
         return null;
     }
 
-    /**
-     * Pesquisar contato string.
-     *
-     * @return the string
-     */
     public String pesquisarContato(){
         return null;
     }
 
-    /**
-     * Consulta detalhes interacao string.
-     *
-     * @return the string
-     */
     public String consultaDetalhesInteracao(){
         return null;
     }
@@ -197,51 +142,41 @@ public class Sistema {
         }
     }
 
-    private static void consultarSubstancias(String filePath) {
-        System.out.println("---");
-    }
-    private static String readJson(String filePath) throws IOException {
-        BufferedReader reader = null;
+
+    private static void consultarSubstancias(String json) {
         try {
-            reader = new BufferedReader(new FileReader(filePath));
+            String content = readJson(json);
+            JsonObject jsonObject = JsonParser.parseString(content).getAsJsonObject();
+            JsonArray arraySubstances = jsonObject.getAsJsonArray("substances");
+
+            for (int i = 0; i < arraySubstances.size(); i++) {
+                JsonObject substanceObject = arraySubstances.get(i).getAsJsonObject();
+
+                SubstanciaAtiva substanciaAtiva = new SubstanciaAtiva(
+                        substanceObject.get("Substance").getAsString()
+                );
+
+                System.out.println(substanciaAtiva);
+            }
+        } catch (IOException e) {
+            System.out.println("Ocorreu um erro ao ler o ficheiro: " + e.getMessage());
+        }
+    }
+
+
+    private static void consultarInteracoesAlimentares(String json) {
+
+    }
+
+
+    private static String readJson(String filePath) throws IOException {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             StringBuilder stringBuilder = new StringBuilder();
             String line;
             while ((line = reader.readLine()) != null) {
                 stringBuilder.append(line);
             }
             return stringBuilder.toString();
-        } finally {
-            if (reader != null) {
-                reader.close();
-            }
         }
     }
-
-    /**
-     * Consultar todas as substâncias ativas carregadas.
-     */
-    public static void consultarSubstanciasAtivas() {
-        if (substanciasAtivas != null && !substanciasAtivas.isEmpty()) {
-            for (SubstanciaAtiva substanciaAtiva : substanciasAtivas) {
-                System.out.println(substanciaAtiva);
-            }
-        } else {
-            System.out.println("Nenhuma substância ativa carregada.");
-        }
-    }
-
-    /**
-     * Consultar todas as interações alimentares carregadas.
-     */
-    public static void consultarInteracoesAlimentares() {
-        if (interacaoAlimentares != null && !interacaoAlimentares.isEmpty()) {
-            for (InteracaoAlimentar interacaoAlimentar : interacaoAlimentares) {
-                System.out.println(interacaoAlimentar);
-            }
-        } else {
-            System.out.println("Nenhuma interação alimentar carregada.");
-        }
-    }
-
-
 }
