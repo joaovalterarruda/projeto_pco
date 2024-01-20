@@ -2,7 +2,12 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,50 +28,6 @@ public class Sistema {
         Sistema.interacaoAlimentares = new ArrayList<>(interacaoAlimentars);
     }
 
-    public static void carregarDados(String filename) {
-        Gson gson = new Gson();
-
-        try (Reader reader = new FileReader(filename)) {
-            JsonObject jsonObject = JsonParser.parseReader(reader).getAsJsonObject();
-            // Inicializar as listas
-            drugs = new ArrayList<>();
-            substanciasAtivas = new ArrayList<>();
-            interacaoAlimentares = new ArrayList<>();
-
-            // Carregar lista de medicamentos
-            JsonArray medicamentosArray = jsonObject.getAsJsonArray("drugs");
-            if (medicamentosArray != null) {
-                for (int i = 0; i < medicamentosArray.size(); i++) {
-                    JsonObject medObject = medicamentosArray.get(i).getAsJsonObject();
-                    Medicamento medicamento = gson.fromJson(medObject, Medicamento.class);
-                    drugs.add(medicamento);
-                }
-            }
-
-            // Carregar lista de substâncias ativas
-            JsonArray substanciasArray = jsonObject.getAsJsonArray("substanciaAtivas");
-            if (substanciasArray != null) {
-                for (int i = 0; i < substanciasArray.size(); i++) {
-                    JsonObject substanciaObject = substanciasArray.get(i).getAsJsonObject();
-                    SubstanciaAtiva substanciaAtiva = gson.fromJson(substanciaObject, SubstanciaAtiva.class);
-                    substanciasAtivas.add(substanciaAtiva);
-                }
-            }
-
-            // Carregar lista de interações alimentares
-            JsonArray interacoesArray = jsonObject.getAsJsonArray("interacaoAlimentars");
-            if (interacoesArray != null) {
-                for (int i = 0; i < interacoesArray.size(); i++) {
-                    JsonObject interacaoObject = interacoesArray.get(i).getAsJsonObject();
-                    InteracaoAlimentar interacaoAlimentar = gson.fromJson(interacaoObject, InteracaoAlimentar.class);
-                    interacaoAlimentares.add(interacaoAlimentar);
-                }
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
     /**
      * Menu opcoes.
      */
@@ -105,10 +66,9 @@ public class Sistema {
             switch (opcao) {
                 case 1:
                     System.out.println("Carregando Medicamentos..");
-                    carregarDados(filename);
                     break;
                 case 2:
-                    consultarMedicamentos();
+                    consultarMedicamentos(filename);
                     break;
                 case 3:
                     consultarInteracoesAlimentares();
@@ -223,18 +183,41 @@ public class Sistema {
         return null;
     }
 
-    public static void consultarMedicamentos() {
-        if (drugs != null && !drugs.isEmpty()) {
-            for (Medicamento medicamento : drugs) {
-                System.out.println("Name: " + medicamento.getName());
-                System.out.println("Form: " + medicamento.getForm());
-                System.out.println("Dosage: " + medicamento.getDosage());
-                System.out.println("Laboratory: " + medicamento.getLaboratory());
-                System.out.println("Substances: " + medicamento.getSubstances());
-                System.out.println("-------------------------");
+    private static void consultarMedicamentos(String filePath) {
+        try {
+            String jsonContent = readJsonFile(filePath);
+            JsonObject jsonObject = JsonParser.parseString(jsonContent).getAsJsonObject();
+            JsonArray drugsArray = jsonObject.getAsJsonArray("drugs");
+
+            for (int i = 0; i < drugsArray.size(); i++) {
+                JsonObject medicament = drugsArray.get(i).getAsJsonObject();
+                Medicamento medicamento = new Medicamento(
+                        medicament.get("Name").getAsString(),
+                        medicament.get("Form").getAsString(),
+                        medicament.get("Dosage").getAsString(),
+                        medicament.get("Laboratory").getAsString(),
+                        medicament.get("Substances").getAsString()
+                );
+                System.out.println(medicamento);
             }
-        } else {
-            System.out.println("Nenhum medicamento carregado.");
+        } catch (IOException e) {
+            System.out.println("Ocorreu um erro ao ler o ficheir:  " + e.getMessage());
+        }
+    }
+    private static String readJsonFile(String filePath) throws IOException {
+        BufferedReader reader = null;
+        try {
+            reader = new BufferedReader(new FileReader(filePath));
+            StringBuilder stringBuilder = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                stringBuilder.append(line);
+            }
+            return stringBuilder.toString();
+        } finally {
+            if (reader != null) {
+                reader.close();
+            }
         }
     }
 
