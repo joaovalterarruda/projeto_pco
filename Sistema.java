@@ -226,7 +226,12 @@ public class Sistema {
     public static void consultarMedicamentos() {
         if (drugs != null && !drugs.isEmpty()) {
             for (Medicamento medicamento : drugs) {
-                System.out.println(medicamento);
+                System.out.println("Name: " + medicamento.getName());
+                System.out.println("Form: " + medicamento.getForm());
+                System.out.println("Dosage: " + medicamento.getDosage());
+                System.out.println("Laboratory: " + medicamento.getLaboratory());
+                System.out.println("Substances: " + medicamento.getSubstances());
+                System.out.println("-------------------------");
             }
         } else {
             System.out.println("Nenhum medicamento carregado.");
