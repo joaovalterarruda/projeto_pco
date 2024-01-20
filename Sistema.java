@@ -175,10 +175,10 @@ public class Sistema {
         return null;
     }
 
-    private static void consultarMedicamentos(String filePath) {
+    private static void consultarMedicamentos(String json) {
         try {
-            String jsonContent = readJson(filePath);
-            JsonObject jsonObject = JsonParser.parseString(jsonContent).getAsJsonObject();
+            String content = readJson(json);
+            JsonObject jsonObject = JsonParser.parseString(content).getAsJsonObject();
             JsonArray arrayMedicamentos = jsonObject.getAsJsonArray("drugs");
 
             for (int i = 0; i < arrayMedicamentos.size(); i++) {
