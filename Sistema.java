@@ -1,7 +1,4 @@
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+import com.google.gson.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -37,15 +34,16 @@ public class Sistema {
         System.out.println("1 ) Iniciar Sessão ");
         System.out.println("2 ) Registar Utilizador");
         System.out.println("3 ) Remover Utilizador");
+
         System.out.println("4 ) Adicionar Medicamento");
         System.out.println("5 ) Adicionar Interação Alimentar");
         System.out.println("6 ) Adicionar Substância Ativa");
-        System.out.println("7 ) Consultar Medicamentos");
+
+        System.out.println("7 ) Consultar Medicamentos ---DONE");
         System.out.println("8 ) Consultar Utilizadores");
         System.out.println("9 ) Consultar Substâncias Ativas");
         System.out.println("10 ) Consultar Interações Alimentares");
-        System.out.println("11 ) Pesquisar Interações Alimentares");
-        System.out.println("12 ) Pesquisar Contato da Farmacovigilância");
+        System.out.println("11 ) Pesquisar Contato da Farmacovigilância");
         System.out.println("0 ) Sair");
         System.out.println("********************************");
         System.out.print("Introduza uma opção: ");
@@ -83,24 +81,18 @@ public class Sistema {
                     System.out.println("dois");
                     break;
                 case 7:
-                    System.out.println("dois");
+                    consultarMedicamentos(filename);
                     break;
                 case 8:
                     System.out.println("dois");
                     break;
                 case 9:
-                    System.out.println("dois");
+                    consultarSubstancias(filename);
                     break;
                 case 10:
                     System.out.println("dois");
                     break;
                 case 11:
-                    System.out.println("dois");
-                    break;
-                case 12:
-                    System.out.println("dois");
-                    break;
-                case 13:
                     System.out.println("dois");
                     break;
                 case 0:
@@ -185,12 +177,12 @@ public class Sistema {
 
     private static void consultarMedicamentos(String filePath) {
         try {
-            String jsonContent = readJsonFile(filePath);
+            String jsonContent = readJson(filePath);
             JsonObject jsonObject = JsonParser.parseString(jsonContent).getAsJsonObject();
-            JsonArray drugsArray = jsonObject.getAsJsonArray("drugs");
+            JsonArray arrayMedicamentos = jsonObject.getAsJsonArray("drugs");
 
-            for (int i = 0; i < drugsArray.size(); i++) {
-                JsonObject medicament = drugsArray.get(i).getAsJsonObject();
+            for (int i = 0; i < arrayMedicamentos.size(); i++) {
+                JsonObject medicament = arrayMedicamentos.get(i).getAsJsonObject();
                 Medicamento medicamento = new Medicamento(
                         medicament.get("Name").getAsString(),
                         medicament.get("Form").getAsString(),
@@ -204,7 +196,11 @@ public class Sistema {
             System.out.println("Ocorreu um erro ao ler o ficheir:  " + e.getMessage());
         }
     }
-    private static String readJsonFile(String filePath) throws IOException {
+
+    private static void consultarSubstancias(String filePath) {
+        System.out.println("---");
+    }
+    private static String readJson(String filePath) throws IOException {
         BufferedReader reader = null;
         try {
             reader = new BufferedReader(new FileReader(filePath));
