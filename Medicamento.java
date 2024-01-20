@@ -2,142 +2,70 @@
  * The type Medicamento.
  */
 public class Medicamento {
-    /**
-     * The Nome.
-     */
-    public String nome;
-    /**
-     * The Formula.
-     */
-    public String formula;
-    /**
-     * The Dosagem.
-     */
-    public int dosagem;
-    /**
-     * The Laboratorio.
-     */
-    public String laboratorio;
-    /**
-     * The Substancias.
-     */
-    public String substancias;
+    private String name;
+    private String form;
+    private String dosage;
+    private String laboratory;
+    private String substances;
 
-    /**
-     * Instantiates a new Medicamento.
-     *
-     * @param nome        the nome
-     * @param formula     the formula
-     * @param dosagem     the dosagem
-     * @param laboratorio the laboratorio
-     * @param substancias the substancias
-     */
-    public Medicamento(String nome, String formula, int dosagem, String laboratorio, String substancias) {
-        this.nome = nome;
-        this.formula = formula;
-        this.dosagem = dosagem;
-        this.laboratorio = laboratorio;
-        this.substancias = substancias;
+    public Medicamento(String name, String form, String dosage, String laboratory, String substances) {
+        this.name = name;
+        this.form = form;
+        this.dosage = dosage;
+        this.laboratory = laboratory;
+        this.substances = substances;
     }
 
-    /**
-     * Gets nome.
-     *
-     * @return the nome
-     */
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    /**
-     * Sets nome.
-     *
-     * @param nome the nome
-     */
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    /**
-     * Gets formula.
-     *
-     * @return the formula
-     */
-    public String getFormula() {
-        return formula;
+    public String getForm() {
+        return form;
     }
 
-    /**
-     * Sets formula.
-     *
-     * @param formula the formula
-     */
-    public void setFormula(String formula) {
-        this.formula = formula;
+    public void setForm(String form) {
+        this.form = form;
     }
 
-    /**
-     * Gets dosagem.
-     *
-     * @return the dosagem
-     */
-    public int getDosagem() {
-        return dosagem;
+    public String getDosage() {
+        return dosage;
     }
 
-    /**
-     * Sets dosagem.
-     *
-     * @param dosagem the dosagem
-     */
-    public void setDosagem(int dosagem) {
-        this.dosagem = dosagem;
+    public void setDosage(String dosage) {
+        this.dosage = dosage;
     }
 
-    /**
-     * Gets laboratorio.
-     *
-     * @return the laboratorio
-     */
-    public String getLaboratorio() {
-        return laboratorio;
+    public String getLaboratory() {
+        return laboratory;
     }
 
-    /**
-     * Sets laboratorio.
-     *
-     * @param laboratorio the laboratorio
-     */
-    public void setLaboratorio(String laboratorio) {
-        this.laboratorio = laboratorio;
+    public void setLaboratory(String laboratory) {
+        this.laboratory = laboratory;
     }
 
-    /**
-     * Gets substancias.
-     *
-     * @return the substancias
-     */
-    public String getSubstancias() {
-        return substancias;
+    public String getSubstances() {
+        return substances;
     }
 
-    /**
-     * Sets substancias.
-     *
-     * @param substancias the substancias
-     */
-    public void setSubstancias(String substancias) {
-        this.substancias = substancias;
+    public void setSubstances(String substances) {
+        this.substances = substances;
     }
 
     @Override
     public String toString() {
         return "Medicamento{" +
-                "nome='" + nome + '\'' +
-                ", formula='" + formula + '\'' +
-                ", dosagem=" + dosagem +
-                ", laboratorio='" + laboratorio + '\'' +
-                ", substancias='" + substancias + '\'' +
+                "name='" + name + '\'' +
+                ", form='" + form + '\'' +
+                ", dosage='" + dosage + '\'' +
+                ", laboratory='" + laboratory + '\'' +
+                ", substances='" + substances + '\'' +
                 '}';
     }
 }
+
+
