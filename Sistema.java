@@ -32,7 +32,7 @@ public class Sistema {
         System.out.println("7 ) Consultar Medicamentos ---DONE");
         System.out.println("8 ) Consultar Utilizadores");
         System.out.println("9 ) Consultar Substâncias Ativas ---DONE");
-        System.out.println("10 ) Consultar Interações Alimentares");
+        System.out.println("10 ) Consultar Interações Alimentares ---DONE");
 
         System.out.println("11 ) Pesquisar Contato da Farmacovigilância");
         System.out.println("0 ) Sair");
@@ -57,7 +57,7 @@ public class Sistema {
                     consultarMedicamentos(filename);
                     break;
                 case 3:
-                    consultarInteracoesAlimentares(filename);
+//                    consultarInteracoesAlimentares(filename);
                     break;
                 case 4:
                     consultarSubstancias(filename);
@@ -75,10 +75,10 @@ public class Sistema {
                     System.out.println("dois");
                     break;
                 case 9:
-//                    consultarSubstancias(filename);
+                    consultarSubstancias(filename);
                     break;
                 case 10:
-                    System.out.println("dois");
+                    consultarInteracoesAlimentares(filename);
                     break;
                 case 11:
                     System.out.println("dois");
@@ -90,15 +90,6 @@ public class Sistema {
         } while (true);
     }
 // continuar a partir daqui!
-
-
-    public List<InteracaoAlimentar> consultarInteracaoAlimentar(){
-        return null;
-    }
-
-    public List<SubstanciaAtiva> consultarSubstancias(){
-        return null;
-    }
 
     public List<InteracaoAlimentar> pesquisarInteracaoAlimentar(){
         return null;
@@ -113,10 +104,6 @@ public class Sistema {
     }
 
     public String pesquisarContato(){
-        return null;
-    }
-
-    public String consultaDetalhesInteracao(){
         return null;
     }
 
@@ -163,11 +150,28 @@ public class Sistema {
         }
     }
 
-
     private static void consultarInteracoesAlimentares(String json) {
+        try {
+            String content = readJson(json);
+            JsonObject jsonObject = JsonParser.parseString(content).getAsJsonObject();
+            JsonArray arrayInteracoes = jsonObject.getAsJsonArray("foodInteractions");
 
+            for (int i = 0; i < arrayInteracoes.size(); i++) {
+                JsonObject interacaoObject = arrayInteracoes.get(i).getAsJsonObject();
+                InteracaoAlimentar interacaoAlimentar = new InteracaoAlimentar(
+                        interacaoObject.get("Bibliography").getAsString(),
+                        interacaoObject.get("Effect").getAsString(),
+                        interacaoObject.get("EffectLevel").getAsInt(),
+                        interacaoObject.get("Explanation").getAsString(),
+                        interacaoObject.get("Food").getAsString(),
+                        interacaoObject.get("Substances").getAsString()
+                );
+                System.out.println(interacaoAlimentar);
+            }
+        } catch (IOException e) {
+            System.out.println("Ocorreu um erro ao ler o ficheiro: " + e.getMessage());
+        }
     }
-
 
     private static String readJson(String filePath) throws IOException {
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {

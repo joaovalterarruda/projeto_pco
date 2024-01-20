@@ -1,118 +1,78 @@
-/**
- * The type Interacao alimentar.
- */
 public class InteracaoAlimentar {
-    /**
-     * The Expliccao.
-     */
-    public String explicacao;
-    /**
-     * The Alimento.
-     */
-    public String alimento;
-    /**
-     * The Efeito.
-     */
-    public String efeito;
-    /**
-     * The Bibliografia.
-     */
-    public String bibliografia;
+    public String explanation;
+    public String food;
+    public String effect;
+    public String bibliography;
+    public int effectLevel;
+    public String substances;
 
-    /**
-     * Instantiates a new Interacao alimentar.
-     *
-     * @param explicacao    the expliccao
-     * @param alimento     the alimento
-     * @param efeito       the efeito
-     * @param bibliografia the bibliografia
-     */
-    public InteracaoAlimentar(String explicacao, String alimento, String efeito, String bibliografia) {
-        this.explicacao = explicacao;
-        this.alimento = alimento;
-        this.efeito = efeito;
-        this.bibliografia = bibliografia;
+
+    public InteracaoAlimentar(String bibliography, String effect, int effectLevel, String explanation, String food, String substances) {
+        this.explanation = explanation;
+        this.food = food;
+        this.effect = effect;
+        this.bibliography = bibliography;
+        this.effectLevel = effectLevel;
+        this.substances = substances;
     }
 
-    /**
-     * Gets expliccao.
-     *
-     * @return the expliccao
-     */
-    public String getExpliccao() {
-        return explicacao;
+    public String getExplanation() {
+        return explanation;
     }
 
-    /**
-     * Sets expliccao.
-     *
-     * @param expliccao the expliccao
-     */
-    public void setExpliccao(String expliccao) {
-        this.explicacao = expliccao;
+    public void setExplanation(String explanation) {
+        this.explanation = explanation;
     }
 
-    /**
-     * Gets alimento.
-     *
-     * @return the alimento
-     */
-    public String getAlimento() {
-        return alimento;
+    public String getFood() {
+        return food;
     }
 
-    /**
-     * Sets alimento.
-     *
-     * @param alimento the alimento
-     */
-    public void setAlimento(String alimento) {
-        this.alimento = alimento;
+    public void setFood(String food) {
+        this.food = food;
     }
 
-    /**
-     * Gets efeito.
-     *
-     * @return the efeito
-     */
-    public String getEfeito() {
-        return efeito;
+    public String getEffect() {
+        return effect;
     }
 
-    /**
-     * Sets efeito.
-     *
-     * @param efeito the efeito
-     */
-    public void setEfeito(String efeito) {
-        this.efeito = efeito;
+    public void setEffect(String effect) {
+        this.effect = effect;
     }
 
-    /**
-     * Gets bibliografia.
-     *
-     * @return the bibliografia
-     */
-    public String getBibliografia() {
-        return bibliografia;
+    public String getBibliography() {
+        return bibliography;
     }
 
-    /**
-     * Sets bibliografia.
-     *
-     * @param bibliografia the bibliografia
-     */
-    public void setBibliografia(String bibliografia) {
-        this.bibliografia = bibliografia;
+    public void setBibliography(String bibliography) {
+        this.bibliography = bibliography;
+    }
+
+    public int getEffectLevel() {
+        return effectLevel;
+    }
+
+    public void setEffectLevel(int effectLevel) {
+        this.effectLevel = effectLevel;
+    }
+
+    public String getSubstances() {
+        return substances;
+    }
+
+    public void setSubstances(String substances) {
+        this.substances = substances;
     }
 
     @Override
     public String toString() {
         return "InteracaoAlimentar{" +
-                "explicacao='" + explicacao + '\'' +
-                ", alimento='" + alimento + '\'' +
-                ", efeito='" + efeito + '\'' +
-                ", bibliografia='" + bibliografia + '\'' +
+                "explanation='" + explanation + '\'' +
+                ", food='" + food + '\'' +
+                ", effect='" + effect + '\'' +
+                ", bibliography='" + bibliography + '\'' +
+                ", effectLevel=" + effectLevel +
+                ", substances='" + substances + '\'' +
                 '}';
     }
 }
