@@ -5,19 +5,59 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
+/**
+ * The type Sistema.
+ */
 public class Sistema {
+    /**
+     * The Users.
+     */
     static String users = "utilizadores.json";
+    /**
+     * The Drugs.
+     */
     static List<Medicamento> drugs;
+    /**
+     * The Substances.
+     */
     static List<SubstanciaAtiva> substances;
+    /**
+     * The Food interactions.
+     */
     static List<InteracaoAlimentar> foodInteractions;
+    /**
+     * The Food types.
+     */
     static List<FoodType> foodTypes;
+    /**
+     * The Laboratories.
+     */
     static List<Laboratory> laboratories;
+    /**
+     * The Lista utilizadores.
+     */
     static HandlerUtilizador listaUtilizadores = new HandlerUtilizador();
+    /**
+     * The Lista medicamento.
+     */
     static HandlerMedicamento listaMedicamento = new HandlerMedicamento();
+    /**
+     * The Interacao alimentar.
+     */
     static HandlerIntAlimentar interacaoAlimentar = new HandlerIntAlimentar();
 
+    /**
+     * The Utilizador autenticado.
+     */
     static UtilizadorRegistado utilizadorAutenticado;
 
+    /**
+     * Instantiates a new Sistema.
+     *
+     * @param drugs            the drugs
+     * @param substances       the substances
+     * @param foodInteractions the food interactions
+     */
     public Sistema(List<Medicamento> drugs, List<SubstanciaAtiva> substances, List<InteracaoAlimentar> foodInteractions) {
         Sistema.drugs = new ArrayList<>(drugs);
         Sistema.substances = new ArrayList<>(substances);
@@ -26,6 +66,9 @@ public class Sistema {
         Sistema.laboratories = new ArrayList<>(laboratories);
     }
 
+    /**
+     * Menu opcoes.
+     */
     public static void menuOpcoes() {
         System.out.println();
         System.out.println("******************************************************");
@@ -91,6 +134,12 @@ public class Sistema {
 
         }
     }
+
+    /**
+     * Escolha opcoes.
+     *
+     * @throws IOException the io exception
+     */
     public static void escolhaOpcoes() throws IOException {
         /// estas duas aqui funcao startup
         // carregar medicamentos (esta aqui para juntar no startup)
@@ -285,6 +334,12 @@ public class Sistema {
         }
     }
 
+    /**
+     * Pesquisar interacao alimentar por substancia list.
+     *
+     * @param substancia the substancia
+     * @return the list
+     */
     public List<InteracaoAlimentar> pesquisarInteracaoAlimentarPorSubstancia(String substancia) {
         List<InteracaoAlimentar> resultados = new ArrayList<>();
         for (InteracaoAlimentar interacao : foodInteractions) {
@@ -296,6 +351,12 @@ public class Sistema {
     }
 
 
+    /**
+     * Pesquisar medicamento por substancia list.
+     *
+     * @param substancia the substancia
+     * @return the list
+     */
     public List<Medicamento> pesquisarMedicamentoPorSubstancia(String substancia) {
         List<Medicamento> resultados = new ArrayList<>();
         for (Medicamento medicamento : drugs) {
@@ -306,6 +367,12 @@ public class Sistema {
         return resultados;
     }
 
+    /**
+     * Pesquisar substancia por nome list.
+     *
+     * @param nomeSubstancia the nome substancia
+     * @return the list
+     */
     public List<SubstanciaAtiva> pesquisarSubstanciaPorNome(String nomeSubstancia) {
         List<SubstanciaAtiva> resultados = new ArrayList<>();
         for (SubstanciaAtiva substancia : substances) {
@@ -316,6 +383,11 @@ public class Sistema {
         return resultados;
     }
 
+    /**
+     * Pesquisar contato string.
+     *
+     * @return the string
+     */
     public String pesquisarContato(){
         return null;
     }
@@ -533,6 +605,9 @@ public class Sistema {
         }
     }
 
+    /**
+     * Consultar medicamentos.
+     */
     public static void consultarMedicamentos() {
         if (drugs != null && !drugs.isEmpty()) {
             int contador = 0;
@@ -564,6 +639,9 @@ public class Sistema {
         }
     }
 
+    /**
+     * Consultar substancias ativas.
+     */
     public static void consultarSubstanciasAtivas() {
         if (substances != null && !substances.isEmpty()) {
             int contador = 0;

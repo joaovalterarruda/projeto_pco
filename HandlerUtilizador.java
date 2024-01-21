@@ -6,13 +6,26 @@ import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Handler utilizador.
+ */
 public class HandlerUtilizador{
     private List <UtilizadorRegistado> utilizadores = new ArrayList<>();
 
+    /**
+     * Criar utilizador.
+     *
+     * @param utilizadorRegistado the utilizador registado
+     */
     public void criarUtilizador(UtilizadorRegistado utilizadorRegistado){
         utilizadores.add(utilizadorRegistado);
     }
 
+    /**
+     * Remover utilizador.
+     *
+     * @param nomeUtilizador the nome utilizador
+     */
     public void removerUtilizador(String nomeUtilizador) {
         UtilizadorRegistado utilizadorRemover = null;
         for (UtilizadorRegistado utilizador : utilizadores) {
@@ -30,6 +43,13 @@ public class HandlerUtilizador{
         }
     }
 
+    /**
+     * Verificar credenciais utilizador registado.
+     *
+     * @param nomeUtilizador the nome utilizador
+     * @param password       the password
+     * @return the utilizador registado
+     */
     public UtilizadorRegistado verificarCredenciais(String nomeUtilizador, String password) {
         for (UtilizadorRegistado utilizador : utilizadores) {
             if (utilizador.getNome().equals(nomeUtilizador) && utilizador.getPassword().equals(password)) {
@@ -38,6 +58,12 @@ public class HandlerUtilizador{
         }
         return null; // Credenciais não correspondem a nenhum utilizador
     }
+
+    /**
+     * Carregar utilizadores do ficheiro json handler utilizador.
+     *
+     * @return the handler utilizador
+     */
     static HandlerUtilizador carregarUtilizadoresDoFicheiroJson() {
         Gson gson = new Gson();
 
@@ -57,14 +83,27 @@ public class HandlerUtilizador{
         }
     }
 
+    /**
+     * Gets utilizadores.
+     *
+     * @return the utilizadores
+     */
     public List<UtilizadorRegistado> getUtilizadores() {
         return utilizadores;
     }
 
+    /**
+     * Sets utilizadores.
+     *
+     * @param utilizadores the utilizadores
+     */
     public void setUtilizadores(List<UtilizadorRegistado> utilizadores) {
         this.utilizadores = utilizadores;
     }
 
+    /**
+     * Mostrar informacoes utilizadores.
+     */
     public void mostrarInformacoesUtilizadores() {
         for (UtilizadorRegistado utilizador : utilizadores) {
             System.out.println("Nome: " + utilizador.getNome());

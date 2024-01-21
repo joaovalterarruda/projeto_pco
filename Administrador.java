@@ -1,3 +1,6 @@
+/**
+ * The type Administrador.
+ */
 public class Administrador {
     private final String nome;
     private final String password;
@@ -7,10 +10,20 @@ public class Administrador {
         this.password = password;
     }
 
-    public String getNome() {
+    /**
+     * Gets nome.
+     *
+     * @return the nome
+     */
+    public String getName() {
         return nome;
     }
 
+    /**
+     * Gets password.
+     *
+     * @return the password
+     */
     public String getPassword() {
         return password;
     }
