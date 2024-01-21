@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 public class Sistema {
     static String filename = "dataset.json";
+    static String users = "utilizadores.json";
     static List<Medicamento> drugs;
     static List<SubstanciaAtiva> substanciasAtivas;
     static List<InteracaoAlimentar> interacaoAlimentares;
@@ -33,7 +34,7 @@ public class Sistema {
         System.out.println("6 ) Adicionar Substância Ativa");
 
         System.out.println("7 ) Consultar Medicamentos ---DONE");
-        System.out.println("8 ) Consultar Utilizadores");
+        System.out.println("8 ) Consultar Utilizadores ---DONE");
         System.out.println("9 ) Consultar Substâncias Ativas ---DONE");
         System.out.println("10 ) Consultar Interações Alimentares ---DONE");
 
@@ -75,7 +76,7 @@ public class Sistema {
                     consultarMedicamentos(filename);
                     break;
                 case 8:
-                    System.out.println("dois");
+                    consultarUtilizadores(users);
                     break;
                 case 9:
                     consultarSubstancias(filename);
@@ -166,6 +167,25 @@ public class Sistema {
         guardarUtilizadoresFicheiroJson(listaUtilizadores.getUtilizadores());
 
         System.out.println("Utilizador foi removido com sucesso!");
+    }
+
+    private static void consultarUtilizadores(String json) {
+        try {
+            String content = readJson(json);
+            Gson gson = new Gson();
+            UtilizadorRegistado[] utilizadoresArray = gson.fromJson(content, UtilizadorRegistado[].class);
+
+            if (utilizadoresArray != null && utilizadoresArray.length > 0) {
+                System.out.println("Lista de Utilizadores: ");
+                for (UtilizadorRegistado utilizador : utilizadoresArray) {
+                    System.out.println(utilizador);
+                }
+            } else {
+                System.out.println("Nenhum utilizador foi encontrado!");
+            }
+        } catch (IOException e) {
+            System.out.println("Ocorreu um erro ao ler o ficheiro: " + e.getMessage());
+        }
     }
 
 
