@@ -1,22 +1,40 @@
+/**
+ * The type Substancia ativa.
+ */
 public class SubstanciaAtiva {
-    private String nome;
+    private String substance;
 
-    public SubstanciaAtiva(String nome) {
-        this.nome = nome;
+    /**
+     * Instantiates a new Substancia ativa.
+     *
+     * @param substance the nome
+     */
+    public SubstanciaAtiva(String substance) {
+        this.substance = substance;
     }
 
-    public String getNome() {
-        return nome;
+    /**
+     * Gets nome.
+     *
+     * @return the nome
+     */
+    public String getSubstance() {
+        return substance;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    /**
+     * Sets nome.
+     *
+     * @param substance the nome
+     */
+    public void setSubstance(String substance) {
+        this.substance = substance;
     }
 
     @Override
     public String toString() {
         return "SubstanciaAtiva{" +
-                "nome='" + nome + '\'' +
+                "nome='" + substance + '\'' +
                 '}';
     }
 }

@@ -4,19 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b79bd639-4bc3-49f0-acf2-0da1a3924555" name="Changes" comment="nome modificados">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/dashbuilder_json.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/github_java_json_tools_patch.xml" afterDir="false" />
+    <list default="true" id="8ad3a77b-287c-4b68-96f0-be619c3e8784" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/projeto_pco.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projeto_pco.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HandlerMedicamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/HandlerMedicamento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Medicamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/Medicamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sistema.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/projeto_pco/.idea/projeto_pco.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projeto_pco/.idea/projeto_pco.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/projeto_pco/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projeto_pco/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projeto_pco/CreationHandlerIntAlimentar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projeto_pco/CreationHandlerMedicamento.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projeto_pco/CreationHandlerSubsAtiva.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projeto_pco/Medicamento.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projeto_pco/Medicamento.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projeto_pco/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projeto_pco/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/projeto_pco/Sistema.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,53 +22,40 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="HARD" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2ZYQZ3V962ZsshKK8wrcrwRTYtG" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2bETKx5YDqri1KPF3BblM965t3b" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
+    "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/joaov/OneDrive/Ambiente de Trabalho/ProjetoPCO/projeto_pco",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/Administrador/Library/CloudStorage/OneDrive-UniversidadedosAçores/Ambiente de Trabalho/UAc/3º Ano/1º Semestre/PCO/projeto/PCO",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "configurable.group.appearance",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\joaov\OneDrive\Ambiente de Trabalho\ProjetoPCO\projeto_pco" />
-      <recent name="C:\Users\joaov\OneDrive\Ambiente de Trabalho\ProjetoPCO\projeto_pco\DataSet" />
-    </key>
-  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -92,163 +73,16 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b79bd639-4bc3-49f0-acf2-0da1a3924555" name="Changes" comment="" />
-      <created>1702596584138</created>
+      <changelist id="8ad3a77b-287c-4b68-96f0-be619c3e8784" name="Changes" comment="" />
+      <created>1705779181430</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1702596584138</updated>
-      <workItem from="1702596585299" duration="5000" />
-      <workItem from="1702993479118" duration="9000" />
-      <workItem from="1703034780817" duration="29000" />
-      <workItem from="1703038194258" duration="2517000" />
-      <workItem from="1703084708641" duration="6000" />
-      <workItem from="1703092061927" duration="1830000" />
-      <workItem from="1703113329658" duration="10954000" />
-      <workItem from="1703177989897" duration="16915000" />
-      <workItem from="1703196347660" duration="7278000" />
-      <workItem from="1704275328247" duration="600000" />
-      <workItem from="1704275952959" duration="4312000" />
-      <workItem from="1704708969286" duration="110000" />
-      <workItem from="1704709198262" duration="2840000" />
-      <workItem from="1704883576810" duration="39000" />
-      <workItem from="1705767433742" duration="3969000" />
+      <updated>1705779181430</updated>
+      <workItem from="1705779181948" duration="3895000" />
     </task>
-    <task id="LOCAL-00001" summary="adicao do json dos documentos">
-      <created>1703092125542</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1703092125542</updated>
-    </task>
-    <task id="LOCAL-00002" summary="adicicao de interfaces e criacao da pasta DataSet">
-      <created>1703120619012</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1703120619012</updated>
-    </task>
-    <task id="LOCAL-00003" summary="registar user e guarda no json">
-      <created>1703125587824</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1703125587824</updated>
-    </task>
-    <task id="LOCAL-00004" summary="correcao do que já estava feito">
-      <created>1703179203242</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1703179203242</updated>
-    </task>
-    <task id="LOCAL-00005" summary="adicao do sistema">
-      <created>1703179396433</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1703179396433</updated>
-    </task>
-    <task id="LOCAL-00006" summary="adicao do sistema">
-      <created>1703179457068</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1703179457068</updated>
-    </task>
-    <task id="LOCAL-00007" summary="ajustes dos tipos de cada uma das classes">
-      <created>1703180408527</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1703180408527</updated>
-    </task>
-    <task id="LOCAL-00008" summary="ajustes de tudo um pouco">
-      <created>1703189767826</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1703189767826</updated>
-    </task>
-    <task id="LOCAL-00009" summary="remoção de métodos das classes">
-      <created>1703197517834</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1703197517834</updated>
-    </task>
-    <task id="LOCAL-00010" summary="correção de acordo com o diagrama de classes">
-      <created>1703199574381</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1703199574381</updated>
-    </task>
-    <task id="LOCAL-00011" summary="correção de acordo com o diagrama de classes">
-      <created>1703199601278</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1703199601278</updated>
-    </task>
-    <task id="LOCAL-00012" summary="correção de acordo com o diagrama de classes">
-      <created>1703199633322</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1703199633322</updated>
-    </task>
-    <task id="LOCAL-00013" summary="adição de JavaDoc em tudo">
-      <created>1703201952868</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1703201952868</updated>
-    </task>
-    <task id="LOCAL-00014" summary="adição de três handlers para ser fácil trabalhar">
-      <created>1704276723206</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1704276723206</updated>
-    </task>
-    <task id="LOCAL-00015" summary="nome modificados">
-      <created>1704280860021</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1704280860021</updated>
-    </task>
-    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="adicao do json dos documentos" />
-    <MESSAGE value="adicao extends, main e sistema" />
-    <MESSAGE value="adicicao de interfaces e criacao da pasta DataSet" />
-    <MESSAGE value="registar user e guarda no json" />
-    <MESSAGE value="correcao do que já estava feito" />
-    <MESSAGE value="adicao do sistema" />
-    <MESSAGE value="ajustes dos tipos de cada uma das classes" />
-    <MESSAGE value="ajustes de tudo um pouco" />
-    <MESSAGE value="remoção de métodos das classes" />
-    <MESSAGE value="correção de acordo com o diagrama de classes" />
-    <MESSAGE value="adição de JavaDoc em tudo" />
-    <MESSAGE value="adição de três handlers para ser fácil trabalhar" />
-    <MESSAGE value="nome modificados" />
-    <option name="LAST_COMMIT_MESSAGE" value="nome modificados" />
   </component>
 </project>

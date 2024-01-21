@@ -14,4 +14,7 @@
     <orderEntry type="library" name="github.java.json.tools.patch" level="project" />
     <orderEntry type="library" name="json" level="project" />
   </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="e43ea154-5c94-4f46-a385-1364398d6bf0" />
+  </component>
 </module>
