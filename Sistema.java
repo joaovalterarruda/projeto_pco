@@ -50,7 +50,7 @@ public class Sistema {
                     System.out.println("3 ) Remover Utilizador --- DONE");
                     System.out.println("4 ) Adicionar Medicamento --- DONE");
                     System.out.println("5 ) Adicionar Interação Alimentar --- DONE");
-                    System.out.println("6 ) Adicionar Substância Ativa");
+                    System.out.println("6 ) Adicionar Substância Ativa --- DONE");
 
                     System.out.println("7 ) Consultar Medicamentos ---DONE");
                     System.out.println("8 ) Consultar Utilizadores ---DONE");
@@ -106,7 +106,7 @@ public class Sistema {
                     adicionarInteracaoAlimentar();
                     break;
                 case 6:
-                    System.out.println("dois");
+                    adicionarSubstanciaAtiva();
                     break;
                 case 7:
                     consultarMedicamentos();
@@ -334,10 +334,21 @@ public class Sistema {
         Medicamento novoMedicamento = new Medicamento(name, form, dosage, laboratory, substances);
         // adiciona o medicamento a lista existente
         drugs.add(novoMedicamento);
-        // atualizar o ficheiro dataset.json
-        atualizarDatasetJson();
 
-        System.out.println("Novo medicamento adicionado com sucesso!");
+        System.out.println("O novo medicamento foi  adicionado com sucesso! ");
+    }
+
+    private static void adicionarSubstanciaAtiva() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nome da Substância Ativa: ");
+        String substanciaAtiva = scanner.nextLine();
+
+        // cria objeto substancia ativa com o input
+        SubstanciaAtiva novaSubstancia = new SubstanciaAtiva(substanciaAtiva);
+        // adiciona a substancia ativa a lista de substancias
+        substances.add(novaSubstancia);
+
+        System.out.println("A nova substância ativa foi adicionada com sucesso! ");
     }
 
     private static void consultarUtilizadores(String json) {
