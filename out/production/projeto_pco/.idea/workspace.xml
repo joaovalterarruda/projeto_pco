@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ad3a77b-287c-4b68-96f0-be619c3e8784" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/projeto_pco.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projeto_pco.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/8/6869cda6ada0676969d02dce1b5be0a4bf626888" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/8/6869cda6ada0676969d02dce1b5be0a4bf626888" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/9/69cdb079609ed3ce1e356d44cff508330a5787c4" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/9/69cdb079609ed3ce1e356d44cff508330a5787c4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/f/6f80a1a1e08e5ed09d3580f0c9c2283db39e15bf" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/f/6f80a1a1e08e5ed09d3580f0c9c2283db39e15bf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/3/a3c334b81b2fb986dab724bf192ca7be987ca289" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/3/a3c334b81b2fb986dab724bf192ca7be987ca289" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sistema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projeto_pco/.idea/projeto_pco.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projeto_pco/.idea/projeto_pco.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projeto_pco/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projeto_pco/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projeto_pco/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projeto_pco/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projeto_pco/Sistema.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projeto_pco/InteracaoAlimentar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projeto_pco/InteracaoAlimentar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projeto_pco/Sistema.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projeto_pco/Sistema.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,9 +33,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2bETKx5YDqri1KPF3BblM965t3b" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -52,6 +54,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   }
@@ -70,6 +75,13 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-249ae16d76d6-69315bf7" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -79,6 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1705779181430</updated>
       <workItem from="1705779181948" duration="3895000" />
+      <workItem from="1705790486461" duration="10366000" />
     </task>
     <servers />
   </component>

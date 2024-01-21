@@ -1,76 +1,23 @@
 
-W	java:S125"<This block of commented-out lines of code should be removed.(âã«D8ôæÇÒ1
+
+java:S1192¤"cDefine a constant instead of duplicating this literal "==================================" 3 times.(ÄºÎ”8¯ËŒáÒ1
+¤
+java:S1192ª"…Define a constant instead of duplicating this literal "Pressione Enter para continuar ou 'M' para voltar ao menu principal:" 3 times.(üõÕ›8²±áÒ1
+X	java:S125"<This block of commented-out lines of code should be removed.(„İ®›8¢ÆîàÒ1
+X	java:S125	"<This block of commented-out lines of code should be removed.(ÈäË¿8¢ÆîàÒ1
+W	java:S125"<This block of commented-out lines of code should be removed.(âã«D8¥ÆîàÒ1
 D
-java:S3010""Remove this assignment of "drugs".(Ëí¥Öûÿÿÿÿ8ôæÇÒ1
-P
-java:S3010".Remove this assignment of "substanciasAtivas".(¾±—«üÿÿÿÿ8õæÇÒ1
-N
-java:S3010"1Remove this assignment of "interacaoAlimentares".(ùÓ¡€8õæÇÒ1
-G	java:S106""+Replace this use of System.out by a logger.(¾“ûÓ8÷æÇÒ1
-L	java:S106#"+Replace this use of System.out by a logger.(™¼åÃüÿÿÿÿ8÷æÇÒ1
-L	java:S106$"+Replace this use of System.out by a logger.(íÁ¯‹ûÿÿÿÿ8øæÇÒ1
-F	java:S106%"+Replace this use of System.out by a logger.(Ö¶¹38øæÇÒ1
-L	java:S106&"+Replace this use of System.out by a logger.(õ÷µÂúÿÿÿÿ8øæÇÒ1
-L	java:S106("+Replace this use of System.out by a logger.(ÿ†åŞøÿÿÿÿ8øæÇÒ1
-G	java:S106)"+Replace this use of System.out by a logger.(òİ¶8øæÇÒ1
-L	java:S106*"+Replace this use of System.out by a logger.(ÆÈ£úÿÿÿÿ8ùæÇÒ1
-L	java:S106,"+Replace this use of System.out by a logger.(„ô‰Äúÿÿÿÿ8ùæÇÒ1
-G	java:S106-"+Replace this use of System.out by a logger.(ÊÌÖå8ùæÇÒ1
-G	java:S106."+Replace this use of System.out by a logger.(êË‘€8ùæÇÒ1
-L	java:S106/"+Replace this use of System.out by a logger.(ßğÓùúÿÿÿÿ8ùæÇÒ1
-G	java:S1060"+Replace this use of System.out by a logger.(Œ ’´8ùæÇÒ1
-L	java:S1061"+Replace this use of System.out by a logger.(õåòşÿÿÿÿ8úæÇÒ1
-L	java:S1062"+Replace this use of System.out by a logger.(™¼åÃüÿÿÿÿ8úæÇÒ1
-G	java:S1063"+Replace this use of System.out by a logger.(£ù³Ú8úæÇÒ1
-g
-java:S1854;"ERemove this useless assignment to local variable "listaUtilizadores".(”‚„Îıÿÿÿÿ8ûæÇÒ1
-X
-java:S1481;"6Remove this unused "listaUtilizadores" local variable.(”‚„Îıÿÿÿÿ8üæÇÒ1
-C	java:S131B""Add a default case to this switch.(†²·¹úÿÿÿÿ8ÿæÇÒ1
-G	java:S106D"+Replace this use of System.out by a logger.(ÔŒÎì8ÿæÇÒ1
-L	java:S106P"+Replace this use of System.out by a logger.(ÜÎ³öûÿÿÿÿ8€æÇÒ1
-L	java:S106S"+Replace this use of System.out by a logger.(ÜÎ³öûÿÿÿÿ8€æÇÒ1
-L	java:S106Y"+Replace this use of System.out by a logger.(ÜÎ³öûÿÿÿÿ8€æÇÒ1
-L	java:S106_"+Replace this use of System.out by a logger.(ÜÎ³öûÿÿÿÿ8æÇÒ1
-L	java:S106b"+Replace this use of System.out by a logger.(ÜÎ³öûÿÿÿÿ8æÇÒ1
-L	java:S106e"+Replace this use of System.out by a logger.(·¼“äıÿÿÿÿ8æÇÒ1
-H	java:S106†"+Replace this use of System.out by a logger.(ŠÑ§ğ8†æÇÒ1
-H	java:S106‰"+Replace this use of System.out by a logger.(àì¥8†æÇÒ1
-X	java:S125“"<This block of commented-out lines of code should be removed.(¡ÔöQ8‡æÇÒ1
+java:S3010""Remove this assignment of "drugs".(Ëí¥Öûÿÿÿÿ8¦ÆîàÒ1
 I
-java:S1168"+Return an empty collection instead of null.(¥¹ï8‡æÇÒ1
+java:S3010"'Remove this assignment of "substances".(Úñı¹ùÿÿÿÿ8¦ÆîàÒ1
+J
+java:S3010"-Remove this assignment of "foodInteractions".(º–õ¦8¦ÆîàÒ1
+C	java:S131;""Add a default case to this switch.(†²·¹úÿÿÿÿ8¬ÆîàÒ1
+W	java:S125F"<This block of commented-out lines of code should be removed.(Ê±€U8­ÆîàÒ1
+X	java:S125¨"<This block of commented-out lines of code should be removed.(¡ÔöQ8µÆîàÒ1
 I
-java:S1168¦"+Return an empty collection instead of null.(¥¹ï8ˆæÇÒ1
+java:S1168­"+Return an empty collection instead of null.(¥¹ï8µÆîàÒ1
 I
-java:S1168¯"+Return an empty collection instead of null.(¥¹ï8ˆæÇÒ1
+java:S1168±"+Return an empty collection instead of null.(¥¹ï8µÆîàÒ1
 I
-java:S1168¸"+Return an empty collection instead of null.(¥¹ï8ˆæÇÒ1
-I
-java:S1168Á"+Return an empty collection instead of null.(¥¹ï8‰æÇÒ1
-u
-java:S3776Ù"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(¿³‡¶ÿÿÿÿÿ8ê™ÈÒ1
-H	java:S106Ş"+Replace this use of System.out by a logger.(ÈÜî8ÍÛ“ÈÒ1
-M	java:S106ß"+Replace this use of System.out by a logger.(¿¿†£ùÿÿÿÿ8ĞÛ“ÈÒ1
-H	java:S106à"+Replace this use of System.out by a logger.(İÅô–8ĞÛ“ÈÒ1
-H	java:S106á"+Replace this use of System.out by a logger.(Å¨ç8ÑÛ“ÈÒ1
-M	java:S106â"+Replace this use of System.out by a logger.(İš®¼ıÿÿÿÿ8ÑÛ“ÈÒ1
-H	java:S106å"+Replace this use of System.out by a logger.(ÄºÎ”8 ê™ÈÒ1
-H	java:S106ë"+Replace this use of System.out by a logger.(ÎÜ˜8¡ê™ÈÒ1
-H	java:S106÷"+Replace this use of System.out by a logger.(î˜ô€8ªê™ÈÒ1
-M
-java:S1172û"/Remove this unused method parameter "filePath".(×ª§€8æÇÒ1
-M	java:S106ü"+Replace this use of System.out by a logger.(”ôÙŸúÿÿÿÿ8«ê™ÈÒ1
-M
-java:S2093€"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8æÇÒ1
-M	java:S106•"+Replace this use of System.out by a logger.(ŒçËâıÿÿÿÿ8®ê™ÈÒ1
-H	java:S106˜"+Replace this use of System.out by a logger.(‚Òüî8®ê™ÈÒ1
-M	java:S106¢"+Replace this use of System.out by a logger.(Ùıûùÿÿÿÿ8¯ê™ÈÒ1
-H	java:S106¥"+Replace this use of System.out by a logger.(³Æ¬å8¯ê™ÈÒ1
-Q
-java:S1128"/Remove this unused import 'org.json.JSONArray'.(¬¸Ê’üÿÿÿÿ8ÒÛ“ÈÒ1
-R
-java:S1128"0Remove this unused import 'org.json.JSONObject'.(œÖ´üşÿÿÿÿ8ÒÛ“ÈÒ1
-H
-java:S1128"+Remove this unused import 'java.io.Reader'.(µû¨é8ÒÛ“ÈÒ1
-W
-java:S1128":Remove this unused import 'java.util.concurrent.TimeUnit'.(Æ™ş8ÒÛ“ÈÒ1
+java:S1168µ"+Return an empty collection instead of null.(¥¹ï8¶ÆîàÒ1

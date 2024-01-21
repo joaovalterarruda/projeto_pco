@@ -6,7 +6,7 @@ import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HandlerUtilizador <Lista extends UtilizadorRegistado>{
+public class HandlerUtilizador{
     private List <UtilizadorRegistado> utilizadores = new ArrayList<>();
 
     public void criarUtilizador(UtilizadorRegistado utilizadorRegistado){
@@ -38,12 +38,12 @@ public class HandlerUtilizador <Lista extends UtilizadorRegistado>{
         }
         return null; // Credenciais não correspondem a nenhum utilizador
     }
-    static HandlerUtilizador<UtilizadorRegistado> carregarUtilizadoresDoFicheiroJson() {
+    static HandlerUtilizador carregarUtilizadoresDoFicheiroJson() {
         Gson gson = new Gson();
 
         try (Reader reader = new FileReader("utilizadores.json")) {
             UtilizadorRegistado[] utilizadoresArray = gson.fromJson(reader, UtilizadorRegistado[].class);
-            HandlerUtilizador<UtilizadorRegistado> listaUtilizadores = new HandlerUtilizador<>();
+            HandlerUtilizador listaUtilizadores = new HandlerUtilizador();
 
             if (utilizadoresArray != null) {
                 for (UtilizadorRegistado utilizador : utilizadoresArray) {
@@ -53,7 +53,7 @@ public class HandlerUtilizador <Lista extends UtilizadorRegistado>{
             return listaUtilizadores;
         } catch (IOException e) {
             System.out.println("Erro ao tentar carregar utilizadores do ficheiro JSON: " + e.getMessage());
-            return new HandlerUtilizador<>(); // Retorna uma instância vazia em caso de erro
+            return new HandlerUtilizador(); // Retorna uma instância vazia em caso de erro
         }
     }
 
@@ -63,6 +63,15 @@ public class HandlerUtilizador <Lista extends UtilizadorRegistado>{
 
     public void setUtilizadores(List<UtilizadorRegistado> utilizadores) {
         this.utilizadores = utilizadores;
+    }
+
+    public void mostrarInformacoesUtilizadores() {
+        for (UtilizadorRegistado utilizador : utilizadores) {
+            System.out.println("Nome: " + utilizador.getNome());
+            System.out.println("Password: " + utilizador.getPassword());
+            // Adicione outros campos conforme necessário
+            System.out.println("-------------");
+        }
     }
 
 }

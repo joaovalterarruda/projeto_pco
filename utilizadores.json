@@ -10,5 +10,17 @@
     "password": "admin@admin.com",
     "email": "admin",
     "role": "admin"
+  },
+  {
+    "nome": "lacerda",
+    "password": "lacerda",
+    "email": "lacerda@gmail.com",
+    "role": "admin"
+  },
+  {
+    "nome": "jlacerda",
+    "password": "lacerda",
+    "email": "lacerda123@gmail.com",
+    "role": "farmaceutico"
   }
 ]
