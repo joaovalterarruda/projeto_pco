@@ -2,17 +2,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- * The type Creation handler medicamento.
- */
 public class HandlerMedicamento {
     private final Scanner scanner = new Scanner(System.in);
     private final List<Medicamento> medicamentos = new ArrayList<>();
 
 
-    /**
-     * Criar medicamento.
-     */
     public void criarMedicamento(){
         System.out.println("Digite o nome do medicamento: ");
         String nome = scanner.nextLine();
@@ -36,11 +30,6 @@ public class HandlerMedicamento {
         System.out.println("Medicamento criado com sucesso!");
     }
 
-    /**
-     * Get lista medicamentos list .
-     *
-     * @return the list
-     */
     public List <Medicamento> getListaMedicamentos(){
         return null;
     }

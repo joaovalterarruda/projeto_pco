@@ -1,6 +1,7 @@
 import com.google.gson.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +12,8 @@ public class Sistema {
     static List<Medicamento> drugs;
     static List<SubstanciaAtiva> substanciasAtivas;
     static List<InteracaoAlimentar> interacaoAlimentares;
+    static HandlerUtilizador<UtilizadorRegistado> listaUtilizadores = new HandlerUtilizador<>();
+
 
     public Sistema(List<Medicamento> drugs, List<SubstanciaAtiva> substanciaAtivas, List<InteracaoAlimentar> interacaoAlimentars) {
         Sistema.drugs = new ArrayList<>(drugs);
@@ -21,9 +24,9 @@ public class Sistema {
     public static void menuOpcoes() {
         System.out.println(" Bem Vindo ao programa de Gestão de Farmacoviligância");
         System.out.println("******************************** ");
-        System.out.println("1 ) Iniciar Sessão ");
-        System.out.println("2 ) Registar Utilizador");
-        System.out.println("3 ) Remover Utilizador");
+        System.out.println("1 ) Iniciar Sessão --- DONE");
+        System.out.println("2 ) Adicionar Utilizador --- DONE");
+        System.out.println("3 ) Remover Utilizador --- DONE");
 
         System.out.println("4 ) Adicionar Medicamento");
         System.out.println("5 ) Adicionar Interação Alimentar");
@@ -42,8 +45,8 @@ public class Sistema {
 
     public static void escolhaOpcoes() {
         /// estas duas aqui funcao startup
-        HandlerUtilizador<UtilizadorRegistado> listaUtilizadores = new HandlerUtilizador<>();
         // carregar medicamentos (esta aqui para juntar no startup)
+        listaUtilizadores = HandlerUtilizador.carregarUtilizadoresDoFicheiroJson();
         Scanner scanner = new Scanner(System.in);
         int opcao;
         do {
@@ -51,13 +54,13 @@ public class Sistema {
             opcao = scanner.nextInt();
             switch (opcao) {
                 case 1:
-                    System.out.println("Carregando Medicamentos..");
+                    iniciarSessao();
                     break;
                 case 2:
-                    consultarMedicamentos(filename);
+                    adicionarUtilizador();
                     break;
                 case 3:
-//                    consultarInteracoesAlimentares(filename);
+                    removerUtilizador();
                     break;
                 case 4:
                     consultarSubstancias(filename);
@@ -105,6 +108,76 @@ public class Sistema {
 
     public String pesquisarContato(){
         return null;
+    }
+
+    private static void iniciarSessao() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Introduza o nome de utilizador: ");
+        String nome = scanner.nextLine();
+
+        System.out.print("Introduza a password: ");
+        String password = scanner.nextLine();
+
+        // Verificar credenciais
+        UtilizadorRegistado utilizadorAutenticado = listaUtilizadores.verificarCredenciais(nome, password);
+
+        if (utilizadorAutenticado != null) {
+            System.out.println("Sessão iniciada com sucesso!: \n Bem-vindo! "
+                    + utilizadorAutenticado.getNome());
+        } else {
+            System.out.println("Introduziu credenciais inválidas. ");
+        }
+    }
+
+    private static void adicionarUtilizador() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Introduza o nome de utilizador a adicionar:  ");
+        String nome = scanner.nextLine();
+
+        System.out.print("Introduza a password do utilizador a adicionar:  ");
+        String password = scanner.nextLine();
+
+        System.out.print("Introduza o email para o novo utilizador: ");
+        String email = scanner.nextLine();
+
+        System.out.print("Introduza um papel para o novo utilizador: ");
+        String role = scanner.nextLine();
+
+        UtilizadorRegistado novoUtilizador = new Utente(nome, password, email, role);
+
+        // Adiciona o novo utilizador à lista de utilizadores
+        listaUtilizadores.criarUtilizador(novoUtilizador);
+
+        // Guarda a lista de utilizadores num ficheiro JSON
+        guardarUtilizadoresFicheiroJson(listaUtilizadores.getUtilizadores());
+
+        System.out.println("Utilizador foi adicionado com sucesso!");
+    }
+
+    private static void removerUtilizador() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Introduza o nome de utilizador a remover: ");
+        String nome = scanner.nextLine();
+
+        // Remove o utilizador da lista
+        listaUtilizadores.removerUtilizador(nome);
+
+        // Guarda a lista de utilizadores num ficheiro JSON
+        guardarUtilizadoresFicheiroJson(listaUtilizadores.getUtilizadores());
+
+        System.out.println("Utilizador foi removido com sucesso!");
+    }
+
+
+    private static void guardarUtilizadoresFicheiroJson(List<UtilizadorRegistado> utilizadores) {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+        try (FileWriter writer = new FileWriter("utilizadores.json")) {
+            gson.toJson(utilizadores, writer);
+            System.out.println("Utilizadores foram guardado no ficheiro 'utilizadores.json' ");
+        } catch (IOException e) {
+            System.out.println("Erro ao tentar guardar os utilizadores em JSON: " + e.getMessage());
+        }
     }
 
     private static void consultarMedicamentos(String json) {
