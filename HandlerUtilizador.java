@@ -69,7 +69,6 @@ public class HandlerUtilizador{
         for (UtilizadorRegistado utilizador : utilizadores) {
             System.out.println("Nome: " + utilizador.getNome());
             System.out.println("Password: " + utilizador.getPassword());
-            // Adicione outros campos conforme necessário
             System.out.println("-------------");
         }
     }

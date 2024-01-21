@@ -14,4 +14,12 @@ public class Laboratory {
     public String getSurveillance() {
         return surveillance;
     }
+
+    @Override
+    public String toString() {
+        return "Laboratory{" +
+                "name='" + name + '\'' +
+                ", surveillance='" + surveillance + '\'' +
+                '}';
+    }
 }

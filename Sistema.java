@@ -48,8 +48,8 @@ public class Sistema {
                 case "admin":
                     System.out.println("2 ) Adicionar Utilizador --- DONE");
                     System.out.println("3 ) Remover Utilizador --- DONE");
-                    System.out.println("4 ) Adicionar Medicamento");
-                    System.out.println("5 ) Adicionar Interação Alimentar");
+                    System.out.println("4 ) Adicionar Medicamento --- DONE");
+                    System.out.println("5 ) Adicionar Interação Alimentar --- DONE");
                     System.out.println("6 ) Adicionar Substância Ativa");
 
                     System.out.println("7 ) Consultar Medicamentos ---DONE");
@@ -68,15 +68,12 @@ public class Sistema {
                     System.out.println("0 ) Sair");
                     break;
                 case "industria":
-                    System.out.println("4 ) Adicionar Medicamento");
+                    System.out.println("4 ) Adicionar Medicamento ");
                     System.out.println("7 ) Consultar Medicamentos ---DONE");
                     System.out.println("9 ) Consultar Substâncias Ativas ---DONE");
                     break;
             }
         }
-
-
-
 
         System.out.println("******************************************************");
         System.out.print("Introduza uma opção: ");
@@ -103,7 +100,7 @@ public class Sistema {
                     removerUtilizador();
                     break;
                 case 4:
-                    System.out.println("dois");
+                    adicionarMedicamento();
                     break;
                 case 5:
                     adicionarInteracaoAlimentar();
@@ -143,7 +140,6 @@ public class Sistema {
         try {
             String content = readJson(jsonFilePath);
             JsonObject jsonObject = JsonParser.parseString(content).getAsJsonObject();
-
             // Carregar Medicamentos
             JsonArray arrayMedicamentos = jsonObject.getAsJsonArray("drugs");
             drugs = new ArrayList<>();
@@ -207,24 +203,12 @@ public class Sistema {
                 laboratories.add(laboratory);
             }
 
-
             System.out.println("Dataset carregado com sucesso.");
 
         } catch (IOException e) {
             System.out.println("Ocorreu um erro ao ler o arquivo JSON: " + e.getMessage());
         }
     }
-
-
-    /**
-     * Consultar medicamentos list.
-     *
-     * @return the list
-     */
-// continuar a partir daqui as funcoes
-//    public List<Medicamento> consultarMedicamentos(){
-//        return null;
-//    }
 
     public List<InteracaoAlimentar> pesquisarInteracaoAlimentar(){
         return null;
@@ -286,7 +270,6 @@ public class Sistema {
             // Lê a escolha do utilizador
             int escolha = scanner.nextInt();
 
-
             // Define o papel com base na escolha do utilizador
             switch (escolha) {
                 case 1:
@@ -327,8 +310,34 @@ public class Sistema {
 
         // Guarda a lista de utilizadores num ficheiro JSON
         guardarUtilizadoresFicheiroJson(listaUtilizadores.getUtilizadores());
-
         System.out.println("Utilizador foi removido com sucesso!");
+    }
+
+    private static void adicionarMedicamento() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nome do Medicamento: ");
+        String name = scanner.nextLine();
+
+        System.out.print("Forma: ");
+        String form = scanner.nextLine();
+
+        System.out.print("Dosagem: ");
+        String dosage = scanner.nextLine();
+
+        System.out.print("Laboratório: ");
+        String laboratory = scanner.nextLine();
+
+        System.out.print("Substâncias: ");
+        String substances = scanner.nextLine();
+
+        // cria um objeto medicamento com os dados introduzidos pelo utilizador
+        Medicamento novoMedicamento = new Medicamento(name, form, dosage, laboratory, substances);
+        // adiciona o medicamento a lista existente
+        drugs.add(novoMedicamento);
+        // atualizar o ficheiro dataset.json
+        atualizarDatasetJson();
+
+        System.out.println("Novo medicamento adicionado com sucesso!");
     }
 
     private static void consultarUtilizadores(String json) {
@@ -377,11 +386,6 @@ public class Sistema {
         }
     }
 
-    /**
-     * Consulta e exibe detalhes dos medicamentos carregados na lista.
-     */
-
-
     public static void consultarMedicamentos() {
         if (drugs != null && !drugs.isEmpty()) {
             int contador = 0;
@@ -413,9 +417,6 @@ public class Sistema {
         }
     }
 
-    /**
-     * Consultar todas as substâncias ativas carregadas.
-     */
     public static void consultarSubstanciasAtivas() {
         if (substances != null && !substances.isEmpty()) {
             int contador = 0;
@@ -548,8 +549,6 @@ public class Sistema {
             }
 
         }
-
-
         // Criar um objeto InteracaoAlimentar com os dados fornecidos
         InteracaoAlimentar novaInteracao = new InteracaoAlimentar(bibliografia, efeito, nivelEfeito, explicacao, alimento, substancias);
 
@@ -558,7 +557,6 @@ public class Sistema {
 
         // Atualizar o arquivo dataset.json
         atualizarDatasetJson();
-
         System.out.println("Nova interação alimentar adicionada com sucesso!");
     }
 
@@ -630,7 +628,6 @@ public class Sistema {
         }
         jsonObject.add("substances", arraySubstancias);
 
-
         // Escrever o objeto JSON atualizado no arquivo dataset.json
         try (FileWriter writer = new FileWriter("dataset.json")) {
             gson.toJson(jsonObject, writer);
@@ -640,7 +637,3 @@ public class Sistema {
         }
     }
 }
-
-
-
-
