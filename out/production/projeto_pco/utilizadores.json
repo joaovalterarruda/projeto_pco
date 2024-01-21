@@ -22,5 +22,11 @@
     "password": "lacerda",
     "email": "lacerda123@gmail.com",
     "role": "farmaceutico"
+  },
+  {
+    "nome": "teste",
+    "password": "teste123",
+    "email": "teste123@sapo.pt",
+    "role": "industria"
   }
 ]

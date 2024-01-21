@@ -1,7 +1,7 @@
 /**
  * The type Substancia ativa.
  */
-public class SubstanciaAtiva {
+public class SubstanciaAtiva implements Comparable<SubstanciaAtiva>{
     private String substance;
 
     /**
@@ -36,5 +36,9 @@ public class SubstanciaAtiva {
         return "SubstanciaAtiva{" +
                 "nome='" + substance + '\'' +
                 '}';
+    }
+    @Override
+    public int compareTo(SubstanciaAtiva other) {
+        return this.getSubstance().compareTo(other.getSubstance());
     }
 }

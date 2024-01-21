@@ -71050,6 +71050,14 @@
       "Explanation": "dsfsdfsdf",
       "Food": "Álcool",
       "Substances": "asdasdasd"
+    },
+    {
+      "Bibliography": "dfsdfs",
+      "Effect": "sdfsdf",
+      "EffectLevel": 2,
+      "Explanation": "ddfasd",
+      "Food": "Tabaco",
+      "Substances": "Lisina"
     }
   ],
   "foodTypes": [

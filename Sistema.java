@@ -1,18 +1,11 @@
 import com.google.gson.*;
-//import org.json.JSONArray;
-//import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-//import java.io.Reader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Sistema {
-    //static String filename = "dataset.json";
     static String users = "utilizadores.json";
     static List<Medicamento> drugs;
     static List<SubstanciaAtiva> substances;
@@ -38,96 +31,178 @@ public class Sistema {
         System.out.println("******************************************************");
         System.out.println(" Bem Vindo ao programa de Gestão de Farmacoviligância");
         System.out.println("******************************************************");
-        System.out.println("1 ) Iniciar Sessão --- DONE");
-        if (utilizadorAutenticado == null){
+
+        if (utilizadorAutenticado == null) {
+            System.out.println("1 ) Iniciar Sessão");
             System.out.println("2 ) Consultar Interações Alimentares");
             System.out.println("3 ) Pesquisar Contato Farmacovigilância");
             System.out.println("0 ) Sair");
+            System.out.println("******************************************************");
+            System.out.print("Introduza uma opção: ");
         } else {
-            switch (utilizadorAutenticado.getRole()){
+            int opcaoInicial = 2;
+            int opcaoFinal = 0;
+            switch (utilizadorAutenticado.getRole()) {
                 case "admin":
-                    System.out.println("2 ) Adicionar Utilizador --- DONE");
-                    System.out.println("3 ) Remover Utilizador --- DONE");
-                    System.out.println("4 ) Adicionar Medicamento --- DONE");
-                    System.out.println("5 ) Adicionar Interação Alimentar --- DONE");
-                    System.out.println("6 ) Adicionar Substância Ativa --- DONE");
-
-                    System.out.println("7 ) Consultar Medicamentos ---DONE");
-                    System.out.println("8 ) Consultar Utilizadores ---DONE");
-                    System.out.println("9 ) Consultar Substâncias Ativas ---DONE");
-                    System.out.println("10 ) Consultar Interações Alimentares ---DONE");
-
+                    System.out.println("Opções disponíveis para Admin:");
+                    System.out.println("2 ) Adicionar Utilizador");
+                    System.out.println("3 ) Remover Utilizador");
+                    System.out.println("4 ) Adicionar Medicamento");
+                    System.out.println("5 ) Adicionar Interação Alimentar");
+                    System.out.println("6 ) Adicionar Substância Ativa");
+                    System.out.println("4 ) Adicionar Medicamento");
+                    System.out.println("5 ) Adicionar Interação Alimentar");
+                    System.out.println("6 ) Adicionar Substância Ativa");
+                    System.out.println("7 ) Consultar Medicamentos");
+                    System.out.println("8 ) Consultar Utilizadores");
+                    System.out.println("9 ) Consultar Substâncias Ativas");
+                    System.out.println("10 ) Consultar Interações Alimentares");
                     System.out.println("11 ) Pesquisar Contato da Farmacovigilância");
                     System.out.println("0 ) Sair");
                     break;
                 case "farmaceutico":
-                    System.out.println("5 ) Adicionar Interação Alimentar");
-                    System.out.println("9 ) Consultar Substâncias Ativas ---DONE");
-                    System.out.println("10 ) Consultar Interações Alimentares ---DONE");
-                    System.out.println("11 ) Pesquisar Contato da Farmacovigilância");
+                    System.out.println("Opções disponíveis para Farmacêutico:");
+                    System.out.println("2 ) Adicionar Interação Alimentar");
+                    System.out.println("3 ) Consultar Substâncias Ativas");
+                    System.out.println("4 ) Consultar Interações Alimentares");
+                    System.out.println("5 ) Pesquisar Contato da Farmacovigilância");
                     System.out.println("0 ) Sair");
+
                     break;
                 case "industria":
-                    System.out.println("4 ) Adicionar Medicamento ");
-                    System.out.println("7 ) Consultar Medicamentos ---DONE");
-                    System.out.println("9 ) Consultar Substâncias Ativas ---DONE");
+                    System.out.println("Opções disponíveis para Indústria:");
+                    System.out.println("2 ) Adicionar Medicamento");
+                    System.out.println("3 ) Consultar Medicamentos");
+                    System.out.println("4 ) Consultar Substâncias Ativas");
+                    System.out.println("0 ) Sair");
+
                     break;
             }
+
+            for (int i = opcaoInicial; i <= opcaoFinal; i++) {
+                System.out.println(i + " ) Opção " + i);
+
+            }
+
+
+            System.out.println("******************************************************");
+            System.out.print("Introduza uma opção: ");
+            System.out.println();
+
         }
-
-        System.out.println("******************************************************");
-        System.out.print("Introduza uma opção: ");
-        System.out.println();
     }
-
     public static void escolhaOpcoes() throws IOException {
         /// estas duas aqui funcao startup
         // carregar medicamentos (esta aqui para juntar no startup)
         listaUtilizadores = HandlerUtilizador.carregarUtilizadoresDoFicheiroJson();
         Scanner scanner = new Scanner(System.in);
         int opcao;
+
         do {
             menuOpcoes();
             opcao = scanner.nextInt();
+
+            if (!validarOpcao(opcao)) {
+                System.out.println("Opção inválida para o seu papel. Tente novamente.");
+                continue;
+            }
+
             switch (opcao) {
-                case 1:
+                case 1:if (utilizadorAutenticado == null) {
                     iniciarSessao();
-                    break;
+                }
+                break;
                 case 2:
-                    adicionarUtilizador();
+                    if (utilizadorAutenticado == null) {
+                        consultarInteracoesAlimentares();
+                    } else {
+                        String role = utilizadorAutenticado.getRole();
+                        if ("admin".equals(role)) {
+                            adicionarUtilizador();
+                        } else if ("farmaceutico".equals(role)) {
+                            adicionarInteracaoAlimentar();
+                        } else if ("industria".equals(role)) {
+                            adicionarMedicamento();
+                        }
+                    }
                     break;
                 case 3:
-                    removerUtilizador();
+                    if (utilizadorAutenticado == null) {
+                        //pesquisarContatoFarmacovigilancia();
+                    } else {
+                        String role = utilizadorAutenticado.getRole();
+                        if ("admin".equals(role)) {
+                            removerUtilizador();
+                        } else if ("farmaceutico".equals(role)) {
+                            consultarSubstanciasAtivas();
+                        }
+                    }
                     break;
                 case 4:
-                    adicionarMedicamento();
+                    if (utilizadorAutenticado != null && utilizadorAutenticado.getRole().equals("admin")) {
+                        adicionarMedicamento();
+                    }else if (utilizadorAutenticado.getRole().equals("farmaceutico")){
+                        consultarInteracoesAlimentares();
+                    }else if (utilizadorAutenticado.getRole().equals("industria")){
+                        consultarSubstanciasAtivas();
+                    }
                     break;
                 case 5:
-                    adicionarInteracaoAlimentar();
+                    if (utilizadorAutenticado != null && utilizadorAutenticado.getRole().equals("admin")) {
+                        adicionarInteracaoAlimentar();
+                    }else if (utilizadorAutenticado.getRole().equals("farmaceutico")){
+                        //pesquisarContatoFarmacovigilancia();
+                    }
                     break;
                 case 6:
-                    adicionarSubstanciaAtiva();
+                    if (utilizadorAutenticado != null && utilizadorAutenticado.getRole().equals("admin")) {
+                        adicionarSubstanciaAtiva();
+                    }
                     break;
                 case 7:
-                    consultarMedicamentos();
+                    if (utilizadorAutenticado != null && utilizadorAutenticado.getRole().equals("admin")) {
+                        consultarMedicamentos();
+                    }
                     break;
                 case 8:
-                    consultarUtilizadores(users);
+                    if (utilizadorAutenticado != null && utilizadorAutenticado.getRole().equals("admin")) {
+                        consultarUtilizadores(users);
+                    }
                     break;
                 case 9:
-                    consultarSubstanciasAtivas();
+                    if (utilizadorAutenticado != null && (utilizadorAutenticado.getRole().equals("admin")
+                            || utilizadorAutenticado.getRole().equals("farmaceutico"))) {
+                        consultarSubstanciasAtivas();
+                    }
                     break;
                 case 10:
-                    consultarInteracoesAlimentares();
+                    if (utilizadorAutenticado != null) {
+                        consultarInteracoesAlimentares();
+                    }
                     break;
                 case 11:
-                    System.out.println("dois");
+                    if (utilizadorAutenticado != null && utilizadorAutenticado.getRole().equals("admin")) {
+                        //pesquisarContatoFarmacovigilancia();
+                    }
                     break;
                 case 0:
-                    System.out.println("A sair do programa..\nObrigado pela sua visita! Volte sempre!");
-                    return;
+                    if (utilizadorAutenticado == null ||
+                            "admin".equals(utilizadorAutenticado.getRole()) ||
+                            "farmaceutico".equals(utilizadorAutenticado.getRole()) ||
+                            "industria".equals(utilizadorAutenticado.getRole())) {
+                        // Atualizar o arquivo dataset.json
+                        atualizarDatasetJson();
+                        System.out.println("A sair do programa..\nObrigado pela sua visita! Volte sempre!");
+                        return;
+                    }
+                    break;
+
             }
+
         } while (true);
+    }
+    private static boolean validarOpcao(int opcao) {
+        return opcao >= 0 && opcao <= 11;
     }
 
     /**
@@ -210,16 +285,35 @@ public class Sistema {
         }
     }
 
-    public List<InteracaoAlimentar> pesquisarInteracaoAlimentar(){
-        return null;
+    public List<InteracaoAlimentar> pesquisarInteracaoAlimentarPorSubstancia(String substancia) {
+        List<InteracaoAlimentar> resultados = new ArrayList<>();
+        for (InteracaoAlimentar interacao : foodInteractions) {
+            if (interacao.getSubstances().equalsIgnoreCase(substancia)) {
+                resultados.add(interacao);
+            }
+        }
+        return resultados;
     }
 
-    public List<Medicamento> pesquiasrMedicamento(){
-        return null;
+
+    public List<Medicamento> pesquisarMedicamentoPorSubstancia(String substancia) {
+        List<Medicamento> resultados = new ArrayList<>();
+        for (Medicamento medicamento : drugs) {
+            if (medicamento.getSubstances().toLowerCase().contains(substancia.toLowerCase())) {
+                resultados.add(medicamento);
+            }
+        }
+        return resultados;
     }
 
-    public List<SubstanciaAtiva> pesquisarSubstancia(){
-        return null;
+    public List<SubstanciaAtiva> pesquisarSubstanciaPorNome(String nomeSubstancia) {
+        List<SubstanciaAtiva> resultados = new ArrayList<>();
+        for (SubstanciaAtiva substancia : substances) {
+            if (substancia.getSubstance().equalsIgnoreCase(nomeSubstancia)) {
+                resultados.add(substancia);
+            }
+        }
+        return resultados;
     }
 
     public String pesquisarContato(){
@@ -325,13 +419,55 @@ public class Sistema {
         String dosage = scanner.nextLine();
 
         System.out.print("Laboratório: ");
-        String laboratory = scanner.nextLine();
+        System.out.println("Escolha o Laboratório:");
+        for (int i = 0; i < laboratories.size(); i++) {
+            System.out.println((i + 1) + ". " + laboratories.get(i).getName());
+        }
+
+        String laboratory = null;
+        boolean escolhaValida = false;
+
+        while (!escolhaValida) {
+            int escolhaLaboratorio = scanner.nextInt();
+            scanner.nextLine(); // Consumir a quebra de linha
+
+            // Verificar se a escolha é válida
+            if (escolhaLaboratorio >= 1 && escolhaLaboratorio <= laboratories.size()) {
+                // Obter o laboratório escolhido
+                laboratory = laboratories.get(escolhaLaboratorio - 1).getName();
+                escolhaValida = true;
+            } else {
+                System.out.println("Escolha inválida. Tente novamente.");
+            }
+        }
 
         System.out.print("Substâncias: ");
-        String substances = scanner.nextLine();
+        Collections.sort(substances, Comparator.comparing(SubstanciaAtiva::getSubstance));
+        System.out.println("Escolha a substância");
+        for (int i = 0; i < substances.size(); i++){
+            System.out.println((i + 1) + ". " + substances.get(i).getSubstance());
+        }
+
+        String substancias = null;
+        boolean escolhaSubstanciaValida = false;
+
+        while (!escolhaSubstanciaValida) {
+            int escolhaSubstancia = scanner.nextInt();
+            scanner.nextLine(); // Consumir a quebra de linha
+
+            // Verificar se a escolha é válida
+            if (escolhaSubstancia >= 1 && escolhaSubstancia <= substances.size()) {
+                // Obter a substância escolhida
+                substancias = substances.get(escolhaSubstancia - 1).getSubstance();
+                escolhaSubstanciaValida = true;
+            } else {
+                System.out.println("Escolha inválida. Tente novamente.");
+            }
+
+        }
 
         // cria um objeto medicamento com os dados introduzidos pelo utilizador
-        Medicamento novoMedicamento = new Medicamento(name, form, dosage, laboratory, substances);
+        Medicamento novoMedicamento = new Medicamento(name, form, dosage, laboratory, substancias);
         // adiciona o medicamento a lista existente
         drugs.add(novoMedicamento);
 
@@ -538,6 +674,7 @@ public class Sistema {
         }
 
         System.out.print("Substâncias: ");
+        Collections.sort(substances, Comparator.comparing(SubstanciaAtiva::getSubstance));
         System.out.println("Escolha a substância");
         for (int i = 0; i < substances.size(); i++){
             System.out.println((i + 1) + ". " + substances.get(i).getSubstance());
@@ -566,8 +703,7 @@ public class Sistema {
         // Adicionar a nova interação à lista existente
         foodInteractions.add(novaInteracao);
 
-        // Atualizar o arquivo dataset.json
-        atualizarDatasetJson();
+
         System.out.println("Nova interação alimentar adicionada com sucesso!");
     }
 
