@@ -4,51 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ad3a77b-287c-4b68-96f0-be619c3e8784" name="Changes" comment="adicionar Interações&#10;menu dividido">
-      <change afterPath="$PROJECT_DIR$/Papel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SistemaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/8/6869cda6ada0676969d02dce1b5be0a4bf626888" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/8/6869cda6ada0676969d02dce1b5be0a4bf626888" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/f/6f80a1a1e08e5ed09d3580f0c9c2283db39e15bf" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/f/6f80a1a1e08e5ed09d3580f0c9c2283db39e15bf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/3/a3c334b81b2fb986dab724bf192ca7be987ca289" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/3/a3c334b81b2fb986dab724bf192ca7be987ca289" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sistema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projeto_pco/Farmaceutico.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projeto_pco/Farmaceutico.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projeto_pco/HandlerUtilizador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projeto_pco/HandlerUtilizador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projeto_pco/Laboratory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projeto_pco/Laboratory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projeto_pco/Sistema.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projeto_pco/Sistema.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projeto_pco/dataset.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projeto_pco/dataset.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projeto_pco/utilizadores.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projeto_pco/utilizadores.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilizadores.json" beforeDir="false" afterPath="$PROJECT_DIR$/utilizadores.json" afterDir="false" />
+    <list default="true" id="2509bdaf-1a75-4934-a7fe-4bde533639e6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HandlerMedicamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/HandlerMedicamento.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-        <option value="Enum" />
-        <option value="JUnit5 Test Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 6
+  &quot;associatedIndex&quot;: 0
 }</component>
-  <component name="ProjectId" id="2bETKx5YDqri1KPF3BblM965t3b" />
+  <component name="ProjectId" id="2aSGgPb10sHUwH21KLgIgArUspr" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -57,77 +31,58 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
+    "Repository.Attach.Annotations": "true",
+    "Repository.Attach.JavaDocs": "true",
+    "Repository.Attach.Sources": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/Administrador/Library/CloudStorage/OneDrive-UniversidadedosAçores/Ambiente de Trabalho/UAc/3º Ano/1º Semestre/PCO/projeto/PCO",
+    "last_opened_file_path": "C:/Users/JS770701.DROT0/OneDrive - PGA/Ambiente de Trabalho/OOPproj_v4/OOPproj",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="projeto_pco" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.1-openjdk-21.0.1-249ae16d76d6-69315bf7" />
+        <option value="jdk-21.0.1-openjdk-21.0.1-3183f394aec4-7d648f2c" />
+        <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-f98dd351" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8ad3a77b-287c-4b68-96f0-be619c3e8784" name="Changes" comment="" />
-      <created>1705779181430</created>
+      <changelist id="2509bdaf-1a75-4934-a7fe-4bde533639e6" name="Changes" comment="" />
+      <created>1704304679659</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1705779181430</updated>
-      <workItem from="1705779181948" duration="3895000" />
-      <workItem from="1705790486461" duration="29491000" />
+      <updated>1704304679659</updated>
+      <workItem from="1704304681282" duration="2355000" />
+      <workItem from="1704390429907" duration="387000" />
+      <workItem from="1704390834921" duration="375000" />
+      <workItem from="1704391225681" duration="54000" />
+      <workItem from="1704391293241" duration="68000" />
+      <workItem from="1704391375088" duration="45000" />
+      <workItem from="1705666659734" duration="2830000" />
+      <workItem from="1705944435297" duration="327000" />
+      <workItem from="1705944780278" duration="478000" />
+      <workItem from="1705945275826" duration="136000" />
+      <workItem from="1705945466263" duration="36000" />
+      <workItem from="1705945520114" duration="2360000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="adicionar Interações&#10;menu dividido" />
-    <option name="LAST_COMMIT_MESSAGE" value="adicionar Interações&#10;menu dividido" />
   </component>
 </project>

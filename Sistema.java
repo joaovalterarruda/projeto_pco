@@ -87,24 +87,27 @@ public class Sistema {
             int opcaoFinal = 0;
             switch (utilizadorAutenticado.getRole()) {
                 case "admin":
-                    System.out.println("Opções disponíveis para Admin:");
+                    System.out.println("Opções disponíveis para Administrador:");
+                    System.out.println("1 ) Mudar de Utilizador");
                     System.out.println("2 ) Adicionar Utilizador");
                     System.out.println("3 ) Remover Utilizador");
-                    System.out.println("4 ) Adicionar Medicamento");
-                    System.out.println("5 ) Adicionar Interação Alimentar");
-                    System.out.println("6 ) Adicionar Substância Ativa");
-                    System.out.println("4 ) Adicionar Medicamento");
-                    System.out.println("5 ) Adicionar Interação Alimentar");
-                    System.out.println("6 ) Adicionar Substância Ativa");
-                    System.out.println("7 ) Consultar Medicamentos");
-                    System.out.println("8 ) Consultar Utilizadores");
-                    System.out.println("9 ) Consultar Substâncias Ativas");
-                    System.out.println("10 ) Consultar Interações Alimentares");
-                    System.out.println("11 ) Pesquisar Contato da Farmacovigilância");
+                    System.out.println("4 ) Consultar Utilizadores Registados");
+                    System.out.println("5 ) Adicionar Medicamento");
+                    System.out.println("6 ) Consultar Medicamentos");
+                    System.out.println("7 ) Pesquisar Medicamento por Substancia Ativa");
+                    System.out.println("8 ) Adicionar Interação Alimentar");
+                    System.out.println("9 ) Consultar Interações Alimentares");
+                    System.out.println("10) Pesquisar Interações Alimentares por Substância Ativa");
+                    System.out.println("11) Adicionar Substância Ativa");
+                    System.out.println("12) Consultar Substâncias Ativas");
+                    System.out.println("13) Pesquisar Substância Ativa");
+                    System.out.println("14 ) Pesquisar Contato da Farmacovigilância");
+                    System.out.println("******************************************************");
                     System.out.println("0 ) Sair");
                     break;
                 case "farmaceutico":
                     System.out.println("Opções disponíveis para Farmacêutico:");
+                    System.out.println("1 ) Mudar de Utilizador");
                     System.out.println("2 ) Adicionar Interação Alimentar");
                     System.out.println("3 ) Consultar Substâncias Ativas");
                     System.out.println("4 ) Consultar Interações Alimentares");
@@ -114,6 +117,7 @@ public class Sistema {
                     break;
                 case "industria":
                     System.out.println("Opções disponíveis para Indústria:");
+                    System.out.println("1 ) Mudar de Utilizador");
                     System.out.println("2 ) Adicionar Medicamento");
                     System.out.println("3 ) Consultar Medicamentos");
                     System.out.println("4 ) Consultar Substâncias Ativas");
@@ -157,7 +161,10 @@ public class Sistema {
             }
 
             switch (opcao) {
-                case 1:if (utilizadorAutenticado == null) {
+                case 1:if (utilizadorAutenticado == null ||
+                        "admin".equals(utilizadorAutenticado.getRole()) ||
+                        "farmaceutico".equals(utilizadorAutenticado.getRole()) ||
+                        "industria".equals(utilizadorAutenticado.getRole())){
                     iniciarSessao();
                 }
                 break;
@@ -189,7 +196,7 @@ public class Sistema {
                     break;
                 case 4:
                     if (utilizadorAutenticado != null && utilizadorAutenticado.getRole().equals("admin")) {
-                        adicionarMedicamento();
+                       consultarUtilizadores(users);
                     }else if (utilizadorAutenticado.getRole().equals("farmaceutico")){
                         consultarInteracoesAlimentares();
                     }else if (utilizadorAutenticado.getRole().equals("industria")){
@@ -198,22 +205,26 @@ public class Sistema {
                     break;
                 case 5:
                     if (utilizadorAutenticado != null && utilizadorAutenticado.getRole().equals("admin")) {
-                        adicionarInteracaoAlimentar();
+                        adicionarMedicamento();
                     }else if (utilizadorAutenticado.getRole().equals("farmaceutico")){
                         //pesquisarContatoFarmacovigilancia();
                     }
                     break;
                 case 6:
                     if (utilizadorAutenticado != null && utilizadorAutenticado.getRole().equals("admin")) {
-                        adicionarSubstanciaAtiva();
-                    }
-                    break;
-                case 7:
-                    if (utilizadorAutenticado != null && utilizadorAutenticado.getRole().equals("admin")) {
                         consultarMedicamentos();
                     }
                     break;
+                case 7:
+                    if (utilizadorAutenticado != null && utilizadorAutenticado.getRole().equals("admin")){
+                        pesquisarMedicamentoPorSubstancia("substancia");
+                    }
                 case 8:
+                    if (utilizadorAutenticado != null && utilizadorAutenticado.getRole().equals("admin")) {
+                        adicionarInteracaoAlimentar();
+                    }
+                    break;
+                case 12:
                     if (utilizadorAutenticado != null && utilizadorAutenticado.getRole().equals("admin")) {
                         consultarUtilizadores(users);
                     }
@@ -357,7 +368,7 @@ public class Sistema {
      * @param substancia the substancia
      * @return the list
      */
-    public List<Medicamento> pesquisarMedicamentoPorSubstancia(String substancia) {
+    public static List<Medicamento> pesquisarMedicamentoPorSubstancia(String substancia) {
         List<Medicamento> resultados = new ArrayList<>();
         for (Medicamento medicamento : drugs) {
             if (medicamento.getSubstances().toLowerCase().contains(substancia.toLowerCase())) {

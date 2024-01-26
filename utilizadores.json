@@ -28,5 +28,11 @@
     "password": "teste123",
     "email": "teste123@sapo.pt",
     "role": "industria"
+  },
+  {
+    "nome": "1234",
+    "password": "1234",
+    "email": "1234@1234,pt",
+    "role": "admin"
   }
 ]

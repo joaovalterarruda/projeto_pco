@@ -42,7 +42,7 @@ public class HandlerMedicamento {
      * @return the list
      */
     public List <Medicamento> getListaMedicamentos(){
-        return null;
+        return medicamentos;
     }
 
 
